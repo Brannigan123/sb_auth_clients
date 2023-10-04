@@ -60,6 +60,16 @@ dateLibrary="legacy",\
 library="resttemplate",\
 hideGenerationTimestamp=true
 
+# Generate client for python
+openapi-generator generate \
+-g python \
+-i $SPEC_PATH \
+-o ./python \
+--additional-properties=\
+packageName="$NAME",\
+packageVersion="$VERSION",\
+library="asyncio"
+
 # Generate client for rust
 openapi-generator generate \
 -g rust \
