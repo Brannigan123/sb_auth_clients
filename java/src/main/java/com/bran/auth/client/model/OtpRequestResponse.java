@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   OtpRequestResponse.JSON_PROPERTY_EMAIL,
   OtpRequestResponse.JSON_PROPERTY_EXPIRY_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class OtpRequestResponse {
   public static final String JSON_PROPERTY_ERRORED = "errored";
   private Boolean errored;

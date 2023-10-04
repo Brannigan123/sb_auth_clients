@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Role.JSON_PROPERTY_PERMISSIONS,
   Role.JSON_PROPERTY_AUTHORITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Role {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

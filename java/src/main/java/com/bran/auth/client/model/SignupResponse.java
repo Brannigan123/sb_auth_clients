@@ -44,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SignupResponse.JSON_PROPERTY_LOCKED_ACCOUNT,
   SignupResponse.JSON_PROPERTY_DELETED_ACCOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SignupResponse {
   public static final String JSON_PROPERTY_ERRORED = "errored";
   private Boolean errored;

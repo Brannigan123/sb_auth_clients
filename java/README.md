@@ -4,8 +4,6 @@ API for AuthApplication
 
 - API version: 1.0
 
-- Build date: 2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]
-
 Bran's Auth API
 
 

@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Date.JSON_PROPERTY_DAY,
   Date.JSON_PROPERTY_TIMEZONE_OFFSET
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Date {
   public static final String JSON_PROPERTY_SECONDS = "seconds";
   private Integer seconds;

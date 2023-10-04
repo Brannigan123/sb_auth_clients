@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SigninRequest.JSON_PROPERTY_EMAIL_OR_USERNAME,
   SigninRequest.JSON_PROPERTY_PASSWORD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SigninRequest {
   public static final String JSON_PROPERTY_EMAIL_OR_USERNAME = "emailOrUsername";
   private String emailOrUsername;

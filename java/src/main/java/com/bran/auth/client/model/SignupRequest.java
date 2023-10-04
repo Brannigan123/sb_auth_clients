@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   SignupRequest.JSON_PROPERTY_EMAIL,
   SignupRequest.JSON_PROPERTY_PASSWORD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SignupRequest {
   public static final String JSON_PROPERTY_USERNAME = "username";
   private String username;

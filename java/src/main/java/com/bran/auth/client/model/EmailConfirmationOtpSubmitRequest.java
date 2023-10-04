@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   EmailConfirmationOtpSubmitRequest.JSON_PROPERTY_OTP_ID,
   EmailConfirmationOtpSubmitRequest.JSON_PROPERTY_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class EmailConfirmationOtpSubmitRequest {
   public static final String JSON_PROPERTY_OTP_ID = "otpId";
   private String otpId;

@@ -57,7 +57,8 @@ artifactDescription="$DESC",\
 annotationLibrary="swagger2",\
 asyncNative=true,\
 dateLibrary="legacy",\
-library="resttemplate"
+library="resttemplate",\
+hideGenerationTimestamp=true
 
 # Generate client for rust
 openapi-generator generate \

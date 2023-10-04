@@ -44,7 +44,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   TokenRefreshResponse.JSON_PROPERTY_LOCKED_ACCOUNT,
   TokenRefreshResponse.JSON_PROPERTY_DELETED_ACCOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T12:25:09.068723+03:00[Africa/Nairobi]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TokenRefreshResponse {
   public static final String JSON_PROPERTY_ERRORED = "errored";
   private Boolean errored;
