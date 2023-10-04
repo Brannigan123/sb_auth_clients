@@ -21,7 +21,7 @@ rm -r */
 openapi-generator generate \
 -g dart \
 -i $SPEC_PATH \
--o ./dart \
+-o ./lib/dart \
 --additional-properties=\
 pubLibrary="$PKG",\
 pubName="$NAME",\
@@ -34,7 +34,7 @@ pubDescription="$DESC"
 openapi-generator generate \
 -g go \
 -i $SPEC_PATH \
--o ./go \
+-o ./lib/go \
 --additional-properties=\
 packageName="$NAME",\
 packageVersion="$VERSION"
@@ -43,7 +43,7 @@ packageVersion="$VERSION"
 openapi-generator generate \
 -g java \
 -i $SPEC_PATH \
--o ./java \
+-o ./lib/java \
 --additional-properties=\
 groupId="$PKG",\
 artifactId="$NAME",\
@@ -64,7 +64,7 @@ hideGenerationTimestamp=true
 openapi-generator generate \
 -g python \
 -i $SPEC_PATH \
--o ./python \
+-o ./lib/python \
 --additional-properties=\
 packageName="$NAME",\
 packageVersion="$VERSION",\
@@ -74,7 +74,7 @@ library="asyncio"
 openapi-generator generate \
 -g rust \
 -i $SPEC_PATH \
--o ./rust \
+-o ./lib/rust \
 --additional-properties=\
 packageName="$NAME",\
 packageVersion="$VERSION",\
@@ -85,10 +85,16 @@ library="reqwest"
 openapi-generator generate \
 -g typescript-axios \
 -i $SPEC_PATH \
--o ./typescript \
+-o ./lib/typescript \
 --additional-properties=\
 npmName="$NAME",\
 npmVersion="$VERSION",\
 withSeparateModelsAndApi=true,\
 apiPackage="$PKG.api",\
 modelPackage="$PKG.model"
+
+# Generate markdown documentation from OpenAPI spec
+openapi-generator generate \
+-g markdown \
+-i $SPEC_PATH \
+-o .
