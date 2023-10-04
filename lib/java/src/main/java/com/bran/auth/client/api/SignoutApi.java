@@ -2,7 +2,7 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
-import com.bran.auth.client.model.ModelApiResponse;
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SignoutRequest;
 
 import java.util.Collections;
@@ -51,10 +51,10 @@ public class SignoutApi {
      * 
      * <p><b>200</b> - Default response
      * @param signoutRequest  (required)
-     * @return ModelApiResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ModelApiResponse signout(SignoutRequest signoutRequest) throws RestClientException {
+    public AuthResponse signout(SignoutRequest signoutRequest) throws RestClientException {
         return signoutWithHttpInfo(signoutRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class SignoutApi {
      * 
      * <p><b>200</b> - Default response
      * @param signoutRequest  (required)
-     * @return ResponseEntity&lt;ModelApiResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<ModelApiResponse> signoutWithHttpInfo(SignoutRequest signoutRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> signoutWithHttpInfo(SignoutRequest signoutRequest) throws RestClientException {
         Object localVarPostBody = signoutRequest;
         
         // verify the required parameter 'signoutRequest' is set
@@ -89,7 +89,7 @@ public class SignoutApi {
 
         String[] localVarAuthNames = new String[] { "Authentication" };
 
-        ParameterizedTypeReference<ModelApiResponse> localReturnType = new ParameterizedTypeReference<ModelApiResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/authenticated/logout", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

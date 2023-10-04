@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## RefeshToken
 
-> TokenRefreshResponse RefeshToken(ctx).TokenRefreshRequest(tokenRefreshRequest).Execute()
+> AuthResponse RefeshToken(ctx).TokenRefreshRequest(tokenRefreshRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RefreshTokenAPI.RefeshToken``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `RefeshToken`: TokenRefreshResponse
+    // response from `RefeshToken`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `RefreshTokenAPI.RefeshToken`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenRefreshResponse**](TokenRefreshResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

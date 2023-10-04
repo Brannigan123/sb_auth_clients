@@ -17,7 +17,7 @@ void main() {
   // final instance = AuthenticateApi();
 
   group('tests for AuthenticateApi', () {
-    //Future<SigninResponse> authenticate(SigninRequest signinRequest) async
+    //Future<AuthResponse> authenticate(SigninRequest signinRequest) async
     test('test authenticate', () async {
       // TODO
     });

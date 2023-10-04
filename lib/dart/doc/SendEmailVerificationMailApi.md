@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **sendVerificationEmail**
-> ApiResponse sendVerificationEmail()
+> OtpRequestResponse sendVerificationEmail()
 
 
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**OtpRequestResponse**](OtpRequestResponse.md)
 
 ### Authorization
 

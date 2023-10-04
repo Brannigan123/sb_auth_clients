@@ -19,7 +19,7 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing import overload, Optional, Union, Awaitable
 
-from authclient.models.api_response import ApiResponse
+from authclient.models.otp_request_response import OtpRequestResponse
 
 from authclient.api_client import ApiClient
 from authclient.api_response import ApiResponse
@@ -42,15 +42,15 @@ class SendEmailVerificationMailApi:
         self.api_client = api_client
 
     @overload
-    async def send_verification_email(self, **kwargs) -> ApiResponse:  # noqa: E501
+    async def send_verification_email(self, **kwargs) -> OtpRequestResponse:  # noqa: E501
         ...
 
     @overload
-    def send_verification_email(self, async_req: Optional[bool]=True, **kwargs) -> ApiResponse:  # noqa: E501
+    def send_verification_email(self, async_req: Optional[bool]=True, **kwargs) -> OtpRequestResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def send_verification_email(self, async_req: Optional[bool]=None, **kwargs) -> Union[ApiResponse, Awaitable[ApiResponse]]:  # noqa: E501
+    def send_verification_email(self, async_req: Optional[bool]=None, **kwargs) -> Union[OtpRequestResponse, Awaitable[OtpRequestResponse]]:  # noqa: E501
         """send_verification_email  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -68,7 +68,7 @@ class SendEmailVerificationMailApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ApiResponse
+        :rtype: OtpRequestResponse
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
@@ -110,7 +110,7 @@ class SendEmailVerificationMailApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ApiResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(OtpRequestResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -161,7 +161,7 @@ class SendEmailVerificationMailApi:
         _auth_settings = ['Authentication']  # noqa: E501
 
         _response_types_map = {
-            '200': "ApiResponse",
+            '200': "OtpRequestResponse",
         }
 
         return self.api_client.call_api(

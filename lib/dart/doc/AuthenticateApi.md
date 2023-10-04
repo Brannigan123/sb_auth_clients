@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **authenticate**
-> SigninResponse authenticate(signinRequest)
+> AuthResponse authenticate(signinRequest)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SigninResponse**](SigninResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

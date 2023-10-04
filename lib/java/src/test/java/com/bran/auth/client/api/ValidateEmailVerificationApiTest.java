@@ -13,8 +13,8 @@
 
 package com.bran.auth.client.api;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.EmailConfirmationOtpSubmitRequest;
-import com.bran.auth.client.model.ModelApiResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class ValidateEmailVerificationApiTest {
     @Test
     public void validateEmailVerificationTest() {
         EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest = null;
-        ModelApiResponse response = api.validateEmailVerification(emailConfirmationOtpSubmitRequest);
+        AuthResponse response = api.validateEmailVerification(emailConfirmationOtpSubmitRequest);
 
         // TODO: test validations
     }

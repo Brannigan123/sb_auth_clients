@@ -19,9 +19,9 @@ var _ MappedNullable = &Date{}
 
 // Date struct for Date
 type Date struct {
+	Time *int64 `json:"time,omitempty"`
 	// Deprecated
 	Seconds *int32 `json:"seconds,omitempty"`
-	Time *int64 `json:"time,omitempty"`
 	// Deprecated
 	Date *int32 `json:"date,omitempty"`
 	// Deprecated
@@ -53,6 +53,38 @@ func NewDate() *Date {
 func NewDateWithDefaults() *Date {
 	this := Date{}
 	return &this
+}
+
+// GetTime returns the Time field value if set, zero value otherwise.
+func (o *Date) GetTime() int64 {
+	if o == nil || IsNil(o.Time) {
+		var ret int64
+		return ret
+	}
+	return *o.Time
+}
+
+// GetTimeOk returns a tuple with the Time field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Date) GetTimeOk() (*int64, bool) {
+	if o == nil || IsNil(o.Time) {
+		return nil, false
+	}
+	return o.Time, true
+}
+
+// HasTime returns a boolean if a field has been set.
+func (o *Date) HasTime() bool {
+	if o != nil && !IsNil(o.Time) {
+		return true
+	}
+
+	return false
+}
+
+// SetTime gets a reference to the given int64 and assigns it to the Time field.
+func (o *Date) SetTime(v int64) {
+	o.Time = &v
 }
 
 // GetSeconds returns the Seconds field value if set, zero value otherwise.
@@ -88,38 +120,6 @@ func (o *Date) HasSeconds() bool {
 // Deprecated
 func (o *Date) SetSeconds(v int32) {
 	o.Seconds = &v
-}
-
-// GetTime returns the Time field value if set, zero value otherwise.
-func (o *Date) GetTime() int64 {
-	if o == nil || IsNil(o.Time) {
-		var ret int64
-		return ret
-	}
-	return *o.Time
-}
-
-// GetTimeOk returns a tuple with the Time field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Date) GetTimeOk() (*int64, bool) {
-	if o == nil || IsNil(o.Time) {
-		return nil, false
-	}
-	return o.Time, true
-}
-
-// HasTime returns a boolean if a field has been set.
-func (o *Date) HasTime() bool {
-	if o != nil && !IsNil(o.Time) {
-		return true
-	}
-
-	return false
-}
-
-// SetTime gets a reference to the given int64 and assigns it to the Time field.
-func (o *Date) SetTime(v int64) {
-	o.Time = &v
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
@@ -377,11 +377,11 @@ func (o Date) MarshalJSON() ([]byte, error) {
 
 func (o Date) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Seconds) {
-		toSerialize["seconds"] = o.Seconds
-	}
 	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
+	}
+	if !IsNil(o.Seconds) {
+		toSerialize["seconds"] = o.Seconds
 	}
 	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date

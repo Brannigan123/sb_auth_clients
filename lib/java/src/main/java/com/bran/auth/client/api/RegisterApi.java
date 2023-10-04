@@ -2,8 +2,8 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SignupRequest;
-import com.bran.auth.client.model.SignupResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,10 +51,10 @@ public class RegisterApi {
      * 
      * <p><b>200</b> - Default response
      * @param signupRequest  (required)
-     * @return SignupResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public SignupResponse register(SignupRequest signupRequest) throws RestClientException {
+    public AuthResponse register(SignupRequest signupRequest) throws RestClientException {
         return registerWithHttpInfo(signupRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class RegisterApi {
      * 
      * <p><b>200</b> - Default response
      * @param signupRequest  (required)
-     * @return ResponseEntity&lt;SignupResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<SignupResponse> registerWithHttpInfo(SignupRequest signupRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> registerWithHttpInfo(SignupRequest signupRequest) throws RestClientException {
         Object localVarPostBody = signupRequest;
         
         // verify the required parameter 'signupRequest' is set
@@ -89,7 +89,7 @@ public class RegisterApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<SignupResponse> localReturnType = new ParameterizedTypeReference<SignupResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/public/register", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

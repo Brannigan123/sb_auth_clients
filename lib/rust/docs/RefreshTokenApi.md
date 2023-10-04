@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## refesh_token
 
-> crate::models::TokenRefreshResponse refesh_token(token_refresh_request)
+> crate::models::AuthResponse refesh_token(token_refresh_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::TokenRefreshResponse**](TokenRefreshResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

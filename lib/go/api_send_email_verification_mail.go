@@ -27,7 +27,7 @@ type ApiSendVerificationEmailRequest struct {
 	ApiService *SendEmailVerificationMailAPIService
 }
 
-func (r ApiSendVerificationEmailRequest) Execute() (*ApiResponse, *http.Response, error) {
+func (r ApiSendVerificationEmailRequest) Execute() (*OtpRequestResponse, *http.Response, error) {
 	return r.ApiService.SendVerificationEmailExecute(r)
 }
 
@@ -45,13 +45,13 @@ func (a *SendEmailVerificationMailAPIService) SendVerificationEmail(ctx context.
 }
 
 // Execute executes the request
-//  @return ApiResponse
-func (a *SendEmailVerificationMailAPIService) SendVerificationEmailExecute(r ApiSendVerificationEmailRequest) (*ApiResponse, *http.Response, error) {
+//  @return OtpRequestResponse
+func (a *SendEmailVerificationMailAPIService) SendVerificationEmailExecute(r ApiSendVerificationEmailRequest) (*OtpRequestResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiResponse
+		localVarReturnValue  *OtpRequestResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SendEmailVerificationMailAPIService.SendVerificationEmail")

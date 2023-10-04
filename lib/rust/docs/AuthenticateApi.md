@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## authenticate
 
-> crate::models::SigninResponse authenticate(signin_request)
+> crate::models::AuthResponse authenticate(signin_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SigninResponse**](SigninResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

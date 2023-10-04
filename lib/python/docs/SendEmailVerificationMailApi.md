@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **send_verification_email**
-> ApiResponse send_verification_email()
+> OtpRequestResponse send_verification_email()
 
 
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
-from authclient.models.api_response import ApiResponse
+from authclient.models.otp_request_response import OtpRequestResponse
 from authclient.rest import ApiException
 from pprint import pprint
 
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**OtpRequestResponse**](OtpRequestResponse.md)
 
 ### Authorization
 

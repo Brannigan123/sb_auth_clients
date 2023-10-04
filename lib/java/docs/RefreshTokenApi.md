@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## refeshToken
 
-> TokenRefreshResponse refeshToken(tokenRefreshRequest)
+> AuthResponse refeshToken(tokenRefreshRequest)
 
 
 
@@ -32,7 +32,7 @@ public class Example {
         RefreshTokenApi apiInstance = new RefreshTokenApi(defaultClient);
         TokenRefreshRequest tokenRefreshRequest = new TokenRefreshRequest(); // TokenRefreshRequest | 
         try {
-            TokenRefreshResponse result = apiInstance.refeshToken(tokenRefreshRequest);
+            AuthResponse result = apiInstance.refeshToken(tokenRefreshRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RefreshTokenApi#refeshToken");
@@ -54,7 +54,7 @@ public class Example {
 
 ### Return type
 
-[**TokenRefreshResponse**](TokenRefreshResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

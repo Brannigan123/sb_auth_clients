@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **authenticate**
-> SigninResponse authenticate(signin_request)
+> AuthResponse authenticate(signin_request)
 
 
 
@@ -18,8 +18,8 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
+from authclient.models.auth_response import AuthResponse
 from authclient.models.signin_request import SigninRequest
-from authclient.models.signin_response import SigninResponse
 from authclient.rest import ApiException
 from pprint import pprint
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SigninResponse**](SigninResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

@@ -17,7 +17,7 @@ void main() {
   // final instance = RefreshTokenApi();
 
   group('tests for RefreshTokenApi', () {
-    //Future<TokenRefreshResponse> refeshToken(TokenRefreshRequest tokenRefreshRequest) async
+    //Future<AuthResponse> refeshToken(TokenRefreshRequest tokenRefreshRequest) async
     test('test refeshToken', () async {
       // TODO
     });

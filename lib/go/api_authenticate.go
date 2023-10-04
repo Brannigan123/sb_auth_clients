@@ -33,7 +33,7 @@ func (r ApiAuthenticateRequest) SigninRequest(signinRequest SigninRequest) ApiAu
 	return r
 }
 
-func (r ApiAuthenticateRequest) Execute() (*SigninResponse, *http.Response, error) {
+func (r ApiAuthenticateRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.AuthenticateExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *AuthenticateAPIService) Authenticate(ctx context.Context) ApiAuthentica
 }
 
 // Execute executes the request
-//  @return SigninResponse
-func (a *AuthenticateAPIService) AuthenticateExecute(r ApiAuthenticateRequest) (*SigninResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *AuthenticateAPIService) AuthenticateExecute(r ApiAuthenticateRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SigninResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthenticateAPIService.Authenticate")

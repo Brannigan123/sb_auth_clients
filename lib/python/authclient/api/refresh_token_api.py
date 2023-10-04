@@ -19,8 +19,8 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing import overload, Optional, Union, Awaitable
 
+from authclient.models.auth_response import AuthResponse
 from authclient.models.token_refresh_request import TokenRefreshRequest
-from authclient.models.token_refresh_response import TokenRefreshResponse
 
 from authclient.api_client import ApiClient
 from authclient.api_response import ApiResponse
@@ -43,15 +43,15 @@ class RefreshTokenApi:
         self.api_client = api_client
 
     @overload
-    async def refesh_token(self, token_refresh_request : TokenRefreshRequest, **kwargs) -> TokenRefreshResponse:  # noqa: E501
+    async def refesh_token(self, token_refresh_request : TokenRefreshRequest, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @overload
-    def refesh_token(self, token_refresh_request : TokenRefreshRequest, async_req: Optional[bool]=True, **kwargs) -> TokenRefreshResponse:  # noqa: E501
+    def refesh_token(self, token_refresh_request : TokenRefreshRequest, async_req: Optional[bool]=True, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def refesh_token(self, token_refresh_request : TokenRefreshRequest, async_req: Optional[bool]=None, **kwargs) -> Union[TokenRefreshResponse, Awaitable[TokenRefreshResponse]]:  # noqa: E501
+    def refesh_token(self, token_refresh_request : TokenRefreshRequest, async_req: Optional[bool]=None, **kwargs) -> Union[AuthResponse, Awaitable[AuthResponse]]:  # noqa: E501
         """refesh_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -71,7 +71,7 @@ class RefreshTokenApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: TokenRefreshResponse
+        :rtype: AuthResponse
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
@@ -115,7 +115,7 @@ class RefreshTokenApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(TokenRefreshResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(AuthResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -170,7 +170,7 @@ class RefreshTokenApi:
         _auth_settings = []  # noqa: E501
 
         _response_types_map = {
-            '200': "TokenRefreshResponse",
+            '200': "AuthResponse",
         }
 
         return self.api_client.call_api(

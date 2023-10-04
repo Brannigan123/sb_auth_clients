@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## signout
 
-> crate::models::ApiResponse signout(signout_request)
+> crate::models::AuthResponse signout(signout_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApiResponse**](ApiResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

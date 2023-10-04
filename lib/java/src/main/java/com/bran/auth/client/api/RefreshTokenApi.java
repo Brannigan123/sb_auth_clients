@@ -2,8 +2,8 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.TokenRefreshRequest;
-import com.bran.auth.client.model.TokenRefreshResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,10 +51,10 @@ public class RefreshTokenApi {
      * 
      * <p><b>200</b> - Default response
      * @param tokenRefreshRequest  (required)
-     * @return TokenRefreshResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public TokenRefreshResponse refeshToken(TokenRefreshRequest tokenRefreshRequest) throws RestClientException {
+    public AuthResponse refeshToken(TokenRefreshRequest tokenRefreshRequest) throws RestClientException {
         return refeshTokenWithHttpInfo(tokenRefreshRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class RefreshTokenApi {
      * 
      * <p><b>200</b> - Default response
      * @param tokenRefreshRequest  (required)
-     * @return ResponseEntity&lt;TokenRefreshResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<TokenRefreshResponse> refeshTokenWithHttpInfo(TokenRefreshRequest tokenRefreshRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> refeshTokenWithHttpInfo(TokenRefreshRequest tokenRefreshRequest) throws RestClientException {
         Object localVarPostBody = tokenRefreshRequest;
         
         // verify the required parameter 'tokenRefreshRequest' is set
@@ -89,7 +89,7 @@ public class RefreshTokenApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<TokenRefreshResponse> localReturnType = new ParameterizedTypeReference<TokenRefreshResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/public/refresh-token", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

@@ -13,7 +13,7 @@
 
 package com.bran.auth.client.api;
 
-import com.bran.auth.client.model.ModelApiResponse;
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SignoutRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,7 +45,7 @@ public class SignoutApiTest {
     @Test
     public void signoutTest() {
         SignoutRequest signoutRequest = null;
-        ModelApiResponse response = api.signout(signoutRequest);
+        AuthResponse response = api.signout(signoutRequest);
 
         // TODO: test validations
     }

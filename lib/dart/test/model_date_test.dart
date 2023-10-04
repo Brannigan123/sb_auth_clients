@@ -16,13 +16,13 @@ void main() {
   // final instance = ModelDate();
 
   group('test ModelDate', () {
-    // int seconds
-    test('to test the property `seconds`', () async {
+    // int time
+    test('to test the property `time`', () async {
       // TODO
     });
 
-    // int time
-    test('to test the property `time`', () async {
+    // int seconds
+    test('to test the property `seconds`', () async {
       // TODO
     });
 

@@ -17,7 +17,7 @@ void main() {
   // final instance = UpdateUserDetailsApi();
 
   group('tests for UpdateUserDetailsApi', () {
-    //Future<ApiResponse> updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest) async
+    //Future<AuthResponse> updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest) async
     test('test updateUserDetails', () async {
       // TODO
     });

@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { SignupRequest } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
-import { SignupResponse } from '../../../../../com/bran/auth/client/model';
+import { SignupRequest } from '../../../../../com/bran/auth/client/model';
 /**
  * RegisterApi - axios parameter creator
  * @export
@@ -82,7 +82,7 @@ export const RegisterApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async register(signupRequest: SignupRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignupResponse>> {
+        async register(signupRequest: SignupRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.register(signupRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -102,7 +102,7 @@ export const RegisterApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        register(signupRequest: SignupRequest, options?: any): AxiosPromise<SignupResponse> {
+        register(signupRequest: SignupRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.register(signupRequest, options).then((request) => request(axios, basePath));
         },
     };

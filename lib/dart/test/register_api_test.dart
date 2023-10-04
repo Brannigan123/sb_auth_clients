@@ -17,7 +17,7 @@ void main() {
   // final instance = RegisterApi();
 
   group('tests for RegisterApi', () {
-    //Future<SignupResponse> register(SignupRequest signupRequest) async
+    //Future<AuthResponse> register(SignupRequest signupRequest) async
     test('test register', () async {
       // TODO
     });

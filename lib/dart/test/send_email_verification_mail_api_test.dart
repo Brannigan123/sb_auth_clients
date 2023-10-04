@@ -17,7 +17,7 @@ void main() {
   // final instance = SendEmailVerificationMailApi();
 
   group('tests for SendEmailVerificationMailApi', () {
-    //Future<ApiResponse> sendVerificationEmail() async
+    //Future<OtpRequestResponse> sendVerificationEmail() async
     test('test sendVerificationEmail', () async {
       // TODO
     });

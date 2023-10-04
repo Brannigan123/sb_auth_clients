@@ -2,8 +2,8 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.EmailConfirmationOtpSubmitRequest;
-import com.bran.auth.client.model.ModelApiResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,10 +51,10 @@ public class ValidateEmailVerificationApi {
      * 
      * <p><b>200</b> - Default response
      * @param emailConfirmationOtpSubmitRequest  (required)
-     * @return ModelApiResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ModelApiResponse validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
+    public AuthResponse validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
         return validateEmailVerificationWithHttpInfo(emailConfirmationOtpSubmitRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class ValidateEmailVerificationApi {
      * 
      * <p><b>200</b> - Default response
      * @param emailConfirmationOtpSubmitRequest  (required)
-     * @return ResponseEntity&lt;ModelApiResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<ModelApiResponse> validateEmailVerificationWithHttpInfo(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> validateEmailVerificationWithHttpInfo(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
         Object localVarPostBody = emailConfirmationOtpSubmitRequest;
         
         // verify the required parameter 'emailConfirmationOtpSubmitRequest' is set
@@ -89,7 +89,7 @@ public class ValidateEmailVerificationApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<ModelApiResponse> localReturnType = new ParameterizedTypeReference<ModelApiResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/public/validate-email-verification", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { ApiResponse } from '../../../../../com/bran/auth/client/model';
+import { OtpRequestResponse } from '../../../../../com/bran/auth/client/model';
 /**
  * SendEmailVerificationMailApi - axios parameter creator
  * @export
@@ -77,7 +77,7 @@ export const SendEmailVerificationMailApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async sendVerificationEmail(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponse>> {
+        async sendVerificationEmail(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtpRequestResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.sendVerificationEmail(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -96,7 +96,7 @@ export const SendEmailVerificationMailApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        sendVerificationEmail(options?: any): AxiosPromise<ApiResponse> {
+        sendVerificationEmail(options?: any): AxiosPromise<OtpRequestResponse> {
             return localVarFp.sendVerificationEmail(options).then((request) => request(axios, basePath));
         },
     };

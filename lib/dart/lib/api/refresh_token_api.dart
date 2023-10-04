@@ -48,7 +48,7 @@ class RefreshTokenApi {
   /// Parameters:
   ///
   /// * [TokenRefreshRequest] tokenRefreshRequest (required):
-  Future<TokenRefreshResponse?> refeshToken(TokenRefreshRequest tokenRefreshRequest,) async {
+  Future<AuthResponse?> refeshToken(TokenRefreshRequest tokenRefreshRequest,) async {
     final response = await refeshTokenWithHttpInfo(tokenRefreshRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -57,7 +57,7 @@ class RefreshTokenApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TokenRefreshResponse',) as TokenRefreshResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthResponse',) as AuthResponse;
     
     }
     return null;

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## sendVerificationEmail
 
-> ModelApiResponse sendVerificationEmail()
+> OtpRequestResponse sendVerificationEmail()
 
 
 
@@ -36,7 +36,7 @@ public class Example {
 
         SendEmailVerificationMailApi apiInstance = new SendEmailVerificationMailApi(defaultClient);
         try {
-            ModelApiResponse result = apiInstance.sendVerificationEmail();
+            OtpRequestResponse result = apiInstance.sendVerificationEmail();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SendEmailVerificationMailApi#sendVerificationEmail");
@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ModelApiResponse**](ModelApiResponse.md)
+[**OtpRequestResponse**](OtpRequestResponse.md)
 
 ### Authorization
 

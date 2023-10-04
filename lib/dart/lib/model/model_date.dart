@@ -13,8 +13,8 @@ part of com.bran.auth.client;
 class ModelDate {
   /// Returns a new [ModelDate] instance.
   ModelDate({
-    this.seconds,
     this.time,
+    this.seconds,
     this.date,
     this.month,
     this.hours,
@@ -30,7 +30,7 @@ class ModelDate {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? seconds;
+  int? time;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -38,7 +38,7 @@ class ModelDate {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  int? time;
+  int? seconds;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -98,8 +98,8 @@ class ModelDate {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModelDate &&
-    other.seconds == seconds &&
     other.time == time &&
+    other.seconds == seconds &&
     other.date == date &&
     other.month == month &&
     other.hours == hours &&
@@ -111,8 +111,8 @@ class ModelDate {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (seconds == null ? 0 : seconds!.hashCode) +
     (time == null ? 0 : time!.hashCode) +
+    (seconds == null ? 0 : seconds!.hashCode) +
     (date == null ? 0 : date!.hashCode) +
     (month == null ? 0 : month!.hashCode) +
     (hours == null ? 0 : hours!.hashCode) +
@@ -122,19 +122,19 @@ class ModelDate {
     (timezoneOffset == null ? 0 : timezoneOffset!.hashCode);
 
   @override
-  String toString() => 'ModelDate[seconds=$seconds, time=$time, date=$date, month=$month, hours=$hours, minutes=$minutes, year=$year, day=$day, timezoneOffset=$timezoneOffset]';
+  String toString() => 'ModelDate[time=$time, seconds=$seconds, date=$date, month=$month, hours=$hours, minutes=$minutes, year=$year, day=$day, timezoneOffset=$timezoneOffset]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.seconds != null) {
-      json[r'seconds'] = this.seconds;
-    } else {
-      json[r'seconds'] = null;
-    }
     if (this.time != null) {
       json[r'time'] = this.time;
     } else {
       json[r'time'] = null;
+    }
+    if (this.seconds != null) {
+      json[r'seconds'] = this.seconds;
+    } else {
+      json[r'seconds'] = null;
     }
     if (this.date != null) {
       json[r'date'] = this.date;
@@ -193,8 +193,8 @@ class ModelDate {
       }());
 
       return ModelDate(
-        seconds: mapValueOfType<int>(json, r'seconds'),
         time: mapValueOfType<int>(json, r'time'),
+        seconds: mapValueOfType<int>(json, r'seconds'),
         date: mapValueOfType<int>(json, r'date'),
         month: mapValueOfType<int>(json, r'month'),
         hours: mapValueOfType<int>(json, r'hours'),

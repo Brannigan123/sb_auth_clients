@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { TokenRefreshRequest } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
-import { TokenRefreshResponse } from '../../../../../com/bran/auth/client/model';
+import { TokenRefreshRequest } from '../../../../../com/bran/auth/client/model';
 /**
  * RefreshTokenApi - axios parameter creator
  * @export
@@ -82,7 +82,7 @@ export const RefreshTokenApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async refeshToken(tokenRefreshRequest: TokenRefreshRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TokenRefreshResponse>> {
+        async refeshToken(tokenRefreshRequest: TokenRefreshRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.refeshToken(tokenRefreshRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -102,7 +102,7 @@ export const RefreshTokenApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        refeshToken(tokenRefreshRequest: TokenRefreshRequest, options?: any): AxiosPromise<TokenRefreshResponse> {
+        refeshToken(tokenRefreshRequest: TokenRefreshRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.refeshToken(tokenRefreshRequest, options).then((request) => request(axios, basePath));
         },
     };

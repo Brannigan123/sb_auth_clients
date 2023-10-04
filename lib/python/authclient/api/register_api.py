@@ -19,8 +19,8 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing import overload, Optional, Union, Awaitable
 
+from authclient.models.auth_response import AuthResponse
 from authclient.models.signup_request import SignupRequest
-from authclient.models.signup_response import SignupResponse
 
 from authclient.api_client import ApiClient
 from authclient.api_response import ApiResponse
@@ -43,15 +43,15 @@ class RegisterApi:
         self.api_client = api_client
 
     @overload
-    async def register(self, signup_request : SignupRequest, **kwargs) -> SignupResponse:  # noqa: E501
+    async def register(self, signup_request : SignupRequest, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @overload
-    def register(self, signup_request : SignupRequest, async_req: Optional[bool]=True, **kwargs) -> SignupResponse:  # noqa: E501
+    def register(self, signup_request : SignupRequest, async_req: Optional[bool]=True, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def register(self, signup_request : SignupRequest, async_req: Optional[bool]=None, **kwargs) -> Union[SignupResponse, Awaitable[SignupResponse]]:  # noqa: E501
+    def register(self, signup_request : SignupRequest, async_req: Optional[bool]=None, **kwargs) -> Union[AuthResponse, Awaitable[AuthResponse]]:  # noqa: E501
         """register  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -71,7 +71,7 @@ class RegisterApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: SignupResponse
+        :rtype: AuthResponse
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
@@ -115,7 +115,7 @@ class RegisterApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(SignupResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(AuthResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -170,7 +170,7 @@ class RegisterApi:
         _auth_settings = []  # noqa: E501
 
         _response_types_map = {
-            '200': "SignupResponse",
+            '200': "AuthResponse",
         }
 
         return self.api_client.call_api(

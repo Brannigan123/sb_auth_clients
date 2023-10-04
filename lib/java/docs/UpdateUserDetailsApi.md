@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## updateUserDetails
 
-> ModelApiResponse updateUserDetails(userDetailsUpdateRequest)
+> AuthResponse updateUserDetails(userDetailsUpdateRequest)
 
 
 
@@ -37,7 +37,7 @@ public class Example {
         UpdateUserDetailsApi apiInstance = new UpdateUserDetailsApi(defaultClient);
         UserDetailsUpdateRequest userDetailsUpdateRequest = new UserDetailsUpdateRequest(); // UserDetailsUpdateRequest | 
         try {
-            ModelApiResponse result = apiInstance.updateUserDetails(userDetailsUpdateRequest);
+            AuthResponse result = apiInstance.updateUserDetails(userDetailsUpdateRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UpdateUserDetailsApi#updateUserDetails");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**ModelApiResponse**](ModelApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

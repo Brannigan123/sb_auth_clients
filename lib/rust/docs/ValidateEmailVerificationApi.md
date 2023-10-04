@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## validate_email_verification
 
-> crate::models::ApiResponse validate_email_verification(email_confirmation_otp_submit_request)
+> crate::models::AuthResponse validate_email_verification(email_confirmation_otp_submit_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApiResponse**](ApiResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

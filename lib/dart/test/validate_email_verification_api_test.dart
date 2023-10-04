@@ -17,7 +17,7 @@ void main() {
   // final instance = ValidateEmailVerificationApi();
 
   group('tests for ValidateEmailVerificationApi', () {
-    //Future<ApiResponse> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) async
+    //Future<AuthResponse> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) async
     test('test validateEmailVerification', () async {
       // TODO
     });

@@ -25,8 +25,8 @@ class ModelDate(BaseModel):
     """
     ModelDate
     """
-    seconds: Optional[StrictInt] = None
     time: Optional[StrictInt] = None
+    seconds: Optional[StrictInt] = None
     var_date: Optional[StrictInt] = Field(None, alias="date")
     month: Optional[StrictInt] = None
     hours: Optional[StrictInt] = None
@@ -34,7 +34,7 @@ class ModelDate(BaseModel):
     year: Optional[StrictInt] = None
     day: Optional[StrictInt] = None
     timezone_offset: Optional[StrictInt] = Field(None, alias="timezoneOffset")
-    __properties = ["seconds", "time", "date", "month", "hours", "minutes", "year", "day", "timezoneOffset"]
+    __properties = ["time", "seconds", "date", "month", "hours", "minutes", "year", "day", "timezoneOffset"]
 
     class Config:
         """Pydantic configuration"""
@@ -72,8 +72,8 @@ class ModelDate(BaseModel):
             return ModelDate.parse_obj(obj)
 
         _obj = ModelDate.parse_obj({
-            "seconds": obj.get("seconds"),
             "time": obj.get("time"),
+            "seconds": obj.get("seconds"),
             "var_date": obj.get("date"),
             "month": obj.get("month"),
             "hours": obj.get("hours"),

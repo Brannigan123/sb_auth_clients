@@ -33,7 +33,7 @@ func (r ApiValidateEmailVerificationRequest) EmailConfirmationOtpSubmitRequest(e
 	return r
 }
 
-func (r ApiValidateEmailVerificationRequest) Execute() (*ApiResponse, *http.Response, error) {
+func (r ApiValidateEmailVerificationRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.ValidateEmailVerificationExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *ValidateEmailVerificationAPIService) ValidateEmailVerification(ctx cont
 }
 
 // Execute executes the request
-//  @return ApiResponse
-func (a *ValidateEmailVerificationAPIService) ValidateEmailVerificationExecute(r ApiValidateEmailVerificationRequest) (*ApiResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *ValidateEmailVerificationAPIService) ValidateEmailVerificationExecute(r ApiValidateEmailVerificationRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ValidateEmailVerificationAPIService.ValidateEmailVerification")

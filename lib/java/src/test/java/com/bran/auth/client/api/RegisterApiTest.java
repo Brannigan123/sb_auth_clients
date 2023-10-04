@@ -13,8 +13,8 @@
 
 package com.bran.auth.client.api;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SignupRequest;
-import com.bran.auth.client.model.SignupResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class RegisterApiTest {
     @Test
     public void registerTest() {
         SignupRequest signupRequest = null;
-        SignupResponse response = api.register(signupRequest);
+        AuthResponse response = api.register(signupRequest);
 
         // TODO: test validations
     }

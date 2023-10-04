@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **validateEmailVerification**
-> ApiResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
+> AuthResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

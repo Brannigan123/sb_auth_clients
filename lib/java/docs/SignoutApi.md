@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## signout
 
-> ModelApiResponse signout(signoutRequest)
+> AuthResponse signout(signoutRequest)
 
 
 
@@ -37,7 +37,7 @@ public class Example {
         SignoutApi apiInstance = new SignoutApi(defaultClient);
         SignoutRequest signoutRequest = new SignoutRequest(); // SignoutRequest | 
         try {
-            ModelApiResponse result = apiInstance.signout(signoutRequest);
+            AuthResponse result = apiInstance.signout(signoutRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SignoutApi#signout");
@@ -59,7 +59,7 @@ public class Example {
 
 ### Return type
 
-[**ModelApiResponse**](ModelApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

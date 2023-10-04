@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ValidateEmailVerification
 
-> ApiResponse ValidateEmailVerification(ctx).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
+> AuthResponse ValidateEmailVerification(ctx).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ValidateEmailVerificationAPI.ValidateEmailVerification``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ValidateEmailVerification`: ApiResponse
+    // response from `ValidateEmailVerification`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `ValidateEmailVerificationAPI.ValidateEmailVerification`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

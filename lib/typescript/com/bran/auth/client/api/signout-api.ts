@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { ApiResponse } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
 import { SignoutRequest } from '../../../../../com/bran/auth/client/model';
 /**
@@ -86,7 +86,7 @@ export const SignoutApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async signout(signoutRequest: SignoutRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponse>> {
+        async signout(signoutRequest: SignoutRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.signout(signoutRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -106,7 +106,7 @@ export const SignoutApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signout(signoutRequest: SignoutRequest, options?: any): AxiosPromise<ApiResponse> {
+        signout(signoutRequest: SignoutRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.signout(signoutRequest, options).then((request) => request(axios, basePath));
         },
     };

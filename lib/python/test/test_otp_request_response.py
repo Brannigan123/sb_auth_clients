@@ -43,8 +43,8 @@ class TestOtpRequestResponse(unittest.TestCase):
                 otp_id = '',
                 email = '',
                 expiry_date = authclient.models.date.Date(
-                    seconds = 56, 
                     time = 56, 
+                    seconds = 56, 
                     date = 56, 
                     month = 56, 
                     hours = 56, 

@@ -19,7 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ValidateEmailVerificationSuccess {
-    Status200(crate::models::ApiResponse),
+    Status200(crate::models::AuthResponse),
     UnknownValue(serde_json::Value),
 }
 

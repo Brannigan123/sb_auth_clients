@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## send_verification_email
 
-> crate::models::ApiResponse send_verification_email()
+> crate::models::OtpRequestResponse send_verification_email()
 
 
 ### Parameters
@@ -19,7 +19,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ApiResponse**](ApiResponse.md)
+[**crate::models::OtpRequestResponse**](OtpRequestResponse.md)
 
 ### Authorization
 

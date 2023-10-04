@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## update_user_details
 
-> crate::models::ApiResponse update_user_details(user_details_update_request)
+> crate::models::AuthResponse update_user_details(user_details_update_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ApiResponse**](ApiResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

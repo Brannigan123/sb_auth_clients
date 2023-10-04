@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## SendVerificationEmail
 
-> ApiResponse SendVerificationEmail(ctx).Execute()
+> OtpRequestResponse SendVerificationEmail(ctx).Execute()
 
 
 
@@ -35,7 +35,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SendEmailVerificationMailAPI.SendVerificationEmail``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SendVerificationEmail`: ApiResponse
+    // response from `SendVerificationEmail`: OtpRequestResponse
     fmt.Fprintf(os.Stdout, "Response from `SendEmailVerificationMailAPI.SendVerificationEmail`: %v\n", resp)
 }
 ```
@@ -51,7 +51,7 @@ Other parameters are passed through a pointer to a apiSendVerificationEmailReque
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**OtpRequestResponse**](OtpRequestResponse.md)
 
 ### Authorization
 

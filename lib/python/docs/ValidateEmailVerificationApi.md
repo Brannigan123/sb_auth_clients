@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **validate_email_verification**
-> ApiResponse validate_email_verification(email_confirmation_otp_submit_request)
+> AuthResponse validate_email_verification(email_confirmation_otp_submit_request)
 
 
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
-from authclient.models.api_response import ApiResponse
+from authclient.models.auth_response import AuthResponse
 from authclient.models.email_confirmation_otp_submit_request import EmailConfirmationOtpSubmitRequest
 from authclient.rest import ApiException
 from pprint import pprint
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

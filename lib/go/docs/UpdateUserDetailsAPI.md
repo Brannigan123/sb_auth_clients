@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## UpdateUserDetails
 
-> ApiResponse UpdateUserDetails(ctx).UserDetailsUpdateRequest(userDetailsUpdateRequest).Execute()
+> AuthResponse UpdateUserDetails(ctx).UserDetailsUpdateRequest(userDetailsUpdateRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UpdateUserDetailsAPI.UpdateUserDetails``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateUserDetails`: ApiResponse
+    // response from `UpdateUserDetails`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `UpdateUserDetailsAPI.UpdateUserDetails`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

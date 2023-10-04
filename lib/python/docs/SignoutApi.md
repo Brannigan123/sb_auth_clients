@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **signout**
-> ApiResponse signout(signout_request)
+> AuthResponse signout(signout_request)
 
 
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
-from authclient.models.api_response import ApiResponse
+from authclient.models.auth_response import AuthResponse
 from authclient.models.signout_request import SignoutRequest
 from authclient.rest import ApiException
 from pprint import pprint
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

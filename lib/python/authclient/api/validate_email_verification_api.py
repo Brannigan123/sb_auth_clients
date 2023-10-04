@@ -19,7 +19,7 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing import overload, Optional, Union, Awaitable
 
-from authclient.models.api_response import ApiResponse
+from authclient.models.auth_response import AuthResponse
 from authclient.models.email_confirmation_otp_submit_request import EmailConfirmationOtpSubmitRequest
 
 from authclient.api_client import ApiClient
@@ -43,15 +43,15 @@ class ValidateEmailVerificationApi:
         self.api_client = api_client
 
     @overload
-    async def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, **kwargs) -> ApiResponse:  # noqa: E501
+    async def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @overload
-    def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, async_req: Optional[bool]=True, **kwargs) -> ApiResponse:  # noqa: E501
+    def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, async_req: Optional[bool]=True, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, async_req: Optional[bool]=None, **kwargs) -> Union[ApiResponse, Awaitable[ApiResponse]]:  # noqa: E501
+    def validate_email_verification(self, email_confirmation_otp_submit_request : EmailConfirmationOtpSubmitRequest, async_req: Optional[bool]=None, **kwargs) -> Union[AuthResponse, Awaitable[AuthResponse]]:  # noqa: E501
         """validate_email_verification  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -71,7 +71,7 @@ class ValidateEmailVerificationApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ApiResponse
+        :rtype: AuthResponse
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
@@ -115,7 +115,7 @@ class ValidateEmailVerificationApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ApiResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(AuthResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -170,7 +170,7 @@ class ValidateEmailVerificationApi:
         _auth_settings = []  # noqa: E501
 
         _response_types_map = {
-            '200': "ApiResponse",
+            '200': "AuthResponse",
         }
 
         return self.api_client.call_api(

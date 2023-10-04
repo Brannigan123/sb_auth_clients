@@ -28,8 +28,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * Date
  */
 @JsonPropertyOrder({
-  Date.JSON_PROPERTY_SECONDS,
   Date.JSON_PROPERTY_TIME,
+  Date.JSON_PROPERTY_SECONDS,
   Date.JSON_PROPERTY_DATE,
   Date.JSON_PROPERTY_MONTH,
   Date.JSON_PROPERTY_HOURS,
@@ -40,11 +40,11 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Date {
-  public static final String JSON_PROPERTY_SECONDS = "seconds";
-  private Integer seconds;
-
   public static final String JSON_PROPERTY_TIME = "time";
   private Long time;
+
+  public static final String JSON_PROPERTY_SECONDS = "seconds";
+  private Integer seconds;
 
   public static final String JSON_PROPERTY_DATE = "date";
   private Integer date;
@@ -69,6 +69,33 @@ public class Date {
 
   public Date() {
   }
+
+  public Date time(Long time) {
+    
+    this.time = time;
+    return this;
+  }
+
+   /**
+   * Get time
+   * @return time
+  **/
+  @javax.annotation.Nullable
+  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
+  @JsonProperty(JSON_PROPERTY_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Long getTime() {
+    return time;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTime(Long time) {
+    this.time = time;
+  }
+
 
   public Date seconds(Integer seconds) {
     
@@ -96,33 +123,6 @@ public class Date {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSeconds(Integer seconds) {
     this.seconds = seconds;
-  }
-
-
-  public Date time(Long time) {
-    
-    this.time = time;
-    return this;
-  }
-
-   /**
-   * Get time
-   * @return time
-  **/
-  @javax.annotation.Nullable
-  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
-  @JsonProperty(JSON_PROPERTY_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Long getTime() {
-    return time;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTime(Long time) {
-    this.time = time;
   }
 
 
@@ -337,8 +337,8 @@ public class Date {
       return false;
     }
     Date date = (Date) o;
-    return Objects.equals(this.seconds, date.seconds) &&
-        Objects.equals(this.time, date.time) &&
+    return Objects.equals(this.time, date.time) &&
+        Objects.equals(this.seconds, date.seconds) &&
         Objects.equals(this.date, date.date) &&
         Objects.equals(this.month, date.month) &&
         Objects.equals(this.hours, date.hours) &&
@@ -350,15 +350,15 @@ public class Date {
 
   @Override
   public int hashCode() {
-    return Objects.hash(seconds, time, date, month, hours, minutes, year, day, timezoneOffset);
+    return Objects.hash(time, seconds, date, month, hours, minutes, year, day, timezoneOffset);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Date {\n");
-    sb.append("    seconds: ").append(toIndentedString(seconds)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    seconds: ").append(toIndentedString(seconds)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    month: ").append(toIndentedString(month)).append("\n");
     sb.append("    hours: ").append(toIndentedString(hours)).append("\n");

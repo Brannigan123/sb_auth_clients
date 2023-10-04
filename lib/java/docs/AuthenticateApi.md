@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## authenticate
 
-> SigninResponse authenticate(signinRequest)
+> AuthResponse authenticate(signinRequest)
 
 
 
@@ -32,7 +32,7 @@ public class Example {
         AuthenticateApi apiInstance = new AuthenticateApi(defaultClient);
         SigninRequest signinRequest = new SigninRequest(); // SigninRequest | 
         try {
-            SigninResponse result = apiInstance.authenticate(signinRequest);
+            AuthResponse result = apiInstance.authenticate(signinRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthenticateApi#authenticate");
@@ -54,7 +54,7 @@ public class Example {
 
 ### Return type
 
-[**SigninResponse**](SigninResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

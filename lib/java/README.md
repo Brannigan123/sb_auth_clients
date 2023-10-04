@@ -93,7 +93,7 @@ public class AuthenticateApiExample {
         AuthenticateApi apiInstance = new AuthenticateApi(defaultClient);
         SigninRequest signinRequest = new SigninRequest(); // SigninRequest | 
         try {
-            SigninResponse result = apiInstance.authenticate(signinRequest);
+            AuthResponse result = apiInstance.authenticate(signinRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthenticateApi#authenticate");
@@ -125,20 +125,18 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AuthResponse](docs/AuthResponse.md)
  - [Date](docs/Date.md)
  - [EmailConfirmationOtpSubmitRequest](docs/EmailConfirmationOtpSubmitRequest.md)
- - [ModelApiResponse](docs/ModelApiResponse.md)
  - [OtpRequest](docs/OtpRequest.md)
  - [OtpRequestResponse](docs/OtpRequestResponse.md)
  - [Permission](docs/Permission.md)
+ - [ResponseUserDetails](docs/ResponseUserDetails.md)
  - [Role](docs/Role.md)
  - [SigninRequest](docs/SigninRequest.md)
- - [SigninResponse](docs/SigninResponse.md)
  - [SignoutRequest](docs/SignoutRequest.md)
  - [SignupRequest](docs/SignupRequest.md)
- - [SignupResponse](docs/SignupResponse.md)
  - [TokenRefreshRequest](docs/TokenRefreshRequest.md)
- - [TokenRefreshResponse](docs/TokenRefreshResponse.md)
  - [UserDetailsUpdateRequest](docs/UserDetailsUpdateRequest.md)
 
 

@@ -48,7 +48,7 @@ class ValidateEmailVerificationApi {
   /// Parameters:
   ///
   /// * [EmailConfirmationOtpSubmitRequest] emailConfirmationOtpSubmitRequest (required):
-  Future<ApiResponse?> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
+  Future<AuthResponse?> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
     final response = await validateEmailVerificationWithHttpInfo(emailConfirmationOtpSubmitRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -57,7 +57,7 @@ class ValidateEmailVerificationApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ApiResponse',) as ApiResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthResponse',) as AuthResponse;
     
     }
     return null;

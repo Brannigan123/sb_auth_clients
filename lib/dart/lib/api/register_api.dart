@@ -48,7 +48,7 @@ class RegisterApi {
   /// Parameters:
   ///
   /// * [SignupRequest] signupRequest (required):
-  Future<SignupResponse?> register(SignupRequest signupRequest,) async {
+  Future<AuthResponse?> register(SignupRequest signupRequest,) async {
     final response = await registerWithHttpInfo(signupRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -57,7 +57,7 @@ class RegisterApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SignupResponse',) as SignupResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthResponse',) as AuthResponse;
     
     }
     return null;

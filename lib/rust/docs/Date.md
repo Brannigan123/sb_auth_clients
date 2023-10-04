@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seconds** | Option<**i32**> |  | [optional]
 **time** | Option<**i64**> |  | [optional]
+**seconds** | Option<**i32**> |  | [optional]
 **date** | Option<**i32**> |  | [optional]
 **month** | Option<**i32**> |  | [optional]
 **hours** | Option<**i32**> |  | [optional]

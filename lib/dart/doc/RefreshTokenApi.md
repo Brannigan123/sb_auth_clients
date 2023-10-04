@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **refeshToken**
-> TokenRefreshResponse refeshToken(tokenRefreshRequest)
+> AuthResponse refeshToken(tokenRefreshRequest)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenRefreshResponse**](TokenRefreshResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

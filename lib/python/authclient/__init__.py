@@ -38,18 +38,16 @@ from authclient.exceptions import ApiAttributeError
 from authclient.exceptions import ApiException
 
 # import models into sdk package
-from authclient.models.api_response import ApiResponse
+from authclient.models.auth_response import AuthResponse
 from authclient.models.email_confirmation_otp_submit_request import EmailConfirmationOtpSubmitRequest
 from authclient.models.model_date import ModelDate
 from authclient.models.otp_request import OtpRequest
 from authclient.models.otp_request_response import OtpRequestResponse
 from authclient.models.permission import Permission
+from authclient.models.response_user_details import ResponseUserDetails
 from authclient.models.role import Role
 from authclient.models.signin_request import SigninRequest
-from authclient.models.signin_response import SigninResponse
 from authclient.models.signout_request import SignoutRequest
 from authclient.models.signup_request import SignupRequest
-from authclient.models.signup_response import SignupResponse
 from authclient.models.token_refresh_request import TokenRefreshRequest
-from authclient.models.token_refresh_response import TokenRefreshResponse
 from authclient.models.user_details_update_request import UserDetailsUpdateRequest

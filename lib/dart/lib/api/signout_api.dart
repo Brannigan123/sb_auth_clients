@@ -48,7 +48,7 @@ class SignoutApi {
   /// Parameters:
   ///
   /// * [SignoutRequest] signoutRequest (required):
-  Future<ApiResponse?> signout(SignoutRequest signoutRequest,) async {
+  Future<AuthResponse?> signout(SignoutRequest signoutRequest,) async {
     final response = await signoutWithHttpInfo(signoutRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -57,7 +57,7 @@ class SignoutApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ApiResponse',) as ApiResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthResponse',) as AuthResponse;
     
     }
     return null;

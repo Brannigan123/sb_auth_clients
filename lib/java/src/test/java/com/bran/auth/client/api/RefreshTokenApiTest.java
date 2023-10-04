@@ -13,8 +13,8 @@
 
 package com.bran.auth.client.api;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.TokenRefreshRequest;
-import com.bran.auth.client.model.TokenRefreshResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class RefreshTokenApiTest {
     @Test
     public void refeshTokenTest() {
         TokenRefreshRequest tokenRefreshRequest = null;
-        TokenRefreshResponse response = api.refeshToken(tokenRefreshRequest);
+        AuthResponse response = api.refeshToken(tokenRefreshRequest);
 
         // TODO: test validations
     }

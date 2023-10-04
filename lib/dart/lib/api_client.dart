@@ -182,8 +182,8 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
-        case 'ApiResponse':
-          return ApiResponse.fromJson(value);
+        case 'AuthResponse':
+          return AuthResponse.fromJson(value);
         case 'EmailConfirmationOtpSubmitRequest':
           return EmailConfirmationOtpSubmitRequest.fromJson(value);
         case 'ModelDate':
@@ -194,22 +194,18 @@ class ApiClient {
           return OtpRequestResponse.fromJson(value);
         case 'Permission':
           return Permission.fromJson(value);
+        case 'ResponseUserDetails':
+          return ResponseUserDetails.fromJson(value);
         case 'Role':
           return Role.fromJson(value);
         case 'SigninRequest':
           return SigninRequest.fromJson(value);
-        case 'SigninResponse':
-          return SigninResponse.fromJson(value);
         case 'SignoutRequest':
           return SignoutRequest.fromJson(value);
         case 'SignupRequest':
           return SignupRequest.fromJson(value);
-        case 'SignupResponse':
-          return SignupResponse.fromJson(value);
         case 'TokenRefreshRequest':
           return TokenRefreshRequest.fromJson(value);
-        case 'TokenRefreshResponse':
-          return TokenRefreshResponse.fromJson(value);
         case 'UserDetailsUpdateRequest':
           return UserDetailsUpdateRequest.fromJson(value);
         default:

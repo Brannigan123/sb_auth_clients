@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## Signout
 
-> ApiResponse Signout(ctx).SignoutRequest(signoutRequest).Execute()
+> AuthResponse Signout(ctx).SignoutRequest(signoutRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SignoutAPI.Signout``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `Signout`: ApiResponse
+    // response from `Signout`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `SignoutAPI.Signout`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

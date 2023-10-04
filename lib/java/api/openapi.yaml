@@ -37,7 +37,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/ApiResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       security:
       - Authentication: []
@@ -53,7 +53,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/ApiResponse'
+                $ref: '#/components/schemas/OtpRequestResponse'
           description: Default response
       security:
       - Authentication: []
@@ -74,7 +74,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/ApiResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       security:
       - Authentication: []
@@ -96,7 +96,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/SigninResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       tags:
       - Authenticate
@@ -116,7 +116,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/TokenRefreshResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       tags:
       - Refresh-token
@@ -136,7 +136,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/SignupResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       tags:
       - Register
@@ -176,7 +176,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/ApiResponse'
+                $ref: '#/components/schemas/AuthResponse'
           description: Default response
       tags:
       - Validate email verification
@@ -184,64 +184,23 @@ paths:
       x-accepts: '*/*'
 components:
   responses:
-    "200":
+    "200_0":
       content:
         '*/*':
           schema:
-            $ref: '#/components/schemas/ApiResponse'
+            $ref: '#/components/schemas/AuthResponse'
+      description: Default response
+    "200_1":
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/OtpRequestResponse'
       description: Default response
   schemas:
     array_string:
       items:
         type: string
       type: array
-    ApiResponse:
-      example:
-        messages:
-        - messages
-        - messages
-        errored: true
-      properties:
-        errored:
-          type: boolean
-        messages:
-          items:
-            type: string
-          type: array
-      type: object
-    SignoutRequest:
-      example:
-        token: token
-      properties:
-        token:
-          type: string
-      type: object
-    TokenRefreshRequest:
-      example:
-        token: token
-      properties:
-        token:
-          type: string
-      type: object
-    UserDetailsUpdateRequest:
-      example:
-        password: password
-        otpId: otpId
-        displayName: displayName
-        otpCode: otpCode
-        email: email
-      properties:
-        otpId:
-          type: string
-        otpCode:
-          type: string
-        displayName:
-          type: string
-        email:
-          type: string
-        password:
-          type: string
-      type: object
     Role:
       example:
         permissions:
@@ -300,7 +259,7 @@ components:
       items:
         $ref: '#/components/schemas/Permission'
       type: array
-    SigninResponse:
+    ResponseUserDetails:
       example:
         emailVerified: true
         lockedAccount: true
@@ -338,25 +297,12 @@ components:
           authority: authority
           name: name
           id: id
-        messages:
-        - messages
-        - messages
+        userId: userId
         deletedAccount: true
         email: email
-        errored: true
-        token: token
-        refreshToken: refreshToken
         username: username
       properties:
-        errored:
-          type: boolean
-        messages:
-          items:
-            type: string
-          type: array
-        token:
-          type: string
-        refreshToken:
+        userId:
           type: string
         username:
           type: string
@@ -375,53 +321,55 @@ components:
         deletedAccount:
           type: boolean
       type: object
-    TokenRefreshResponse:
+    AuthResponse:
       example:
-        emailVerified: true
-        lockedAccount: true
-        displayName: displayName
-        roles:
-        - permissions:
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          authority: authority
-          name: name
-          id: id
-        - permissions:
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          authority: authority
-          name: name
-          id: id
         messages:
         - messages
         - messages
-        deletedAccount: true
-        email: email
+        userDetails:
+          emailVerified: true
+          lockedAccount: true
+          displayName: displayName
+          roles:
+          - permissions:
+            - roles:
+              - null
+              - null
+              authority: authority
+              name: name
+              id: id
+            - roles:
+              - null
+              - null
+              authority: authority
+              name: name
+              id: id
+            authority: authority
+            name: name
+            id: id
+          - permissions:
+            - roles:
+              - null
+              - null
+              authority: authority
+              name: name
+              id: id
+            - roles:
+              - null
+              - null
+              authority: authority
+              name: name
+              id: id
+            authority: authority
+            name: name
+            id: id
+          userId: userId
+          deletedAccount: true
+          email: email
+          username: username
         errored: true
         token: token
         refreshToken: refreshToken
-        username: username
       properties:
         errored:
           type: boolean
@@ -433,124 +381,26 @@ components:
           type: string
         refreshToken:
           type: string
-        username:
-          type: string
-        displayName:
-          type: string
-        email:
-          type: string
-        roles:
-          items:
-            $ref: '#/components/schemas/Role'
-          type: array
-        emailVerified:
-          type: boolean
-        lockedAccount:
-          type: boolean
-        deletedAccount:
-          type: boolean
+        userDetails:
+          $ref: '#/components/schemas/ResponseUserDetails'
       type: object
-    SignupResponse:
+    SignoutRequest:
       example:
-        emailVerified: true
-        lockedAccount: true
-        displayName: displayName
-        roles:
-        - permissions:
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          authority: authority
-          name: name
-          id: id
-        - permissions:
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          - roles:
-            - null
-            - null
-            authority: authority
-            name: name
-            id: id
-          authority: authority
-          name: name
-          id: id
-        messages:
-        - messages
-        - messages
-        deletedAccount: true
-        email: email
-        errored: true
         token: token
-        refreshToken: refreshToken
-        username: username
       properties:
-        errored:
-          type: boolean
-        messages:
-          items:
-            type: string
-          type: array
         token:
           type: string
-        refreshToken:
-          type: string
-        username:
-          type: string
-        displayName:
-          type: string
-        email:
-          type: string
-        roles:
-          items:
-            $ref: '#/components/schemas/Role'
-          type: array
-        emailVerified:
-          type: boolean
-        lockedAccount:
-          type: boolean
-        deletedAccount:
-          type: boolean
       type: object
-    SigninRequest:
+    TokenRefreshRequest:
       example:
-        emailOrUsername: emailOrUsername
-        password: password
+        token: token
       properties:
-        emailOrUsername:
-          type: string
-        password:
+        token:
           type: string
       type: object
-    SignupRequest:
-      example:
-        password: password
-        displayName: displayName
-        email: email
-        username: username
-      properties:
-        username:
-          type: string
-        displayName:
-          type: string
-        email:
-          type: string
-        password:
-          type: string
-      type: object
+    integer_int64:
+      format: int64
+      type: integer
     deprecated_integer_int32:
       deprecated: true
       format: int32
@@ -558,21 +408,21 @@ components:
     Date:
       example:
         date: 1
-        seconds: 0
+        seconds: 6
         hours: 5
         month: 5
         year: 7
         timezoneOffset: 3
         minutes: 2
-        time: 6
+        time: 0
         day: 9
       properties:
+        time:
+          format: int64
+          type: integer
         seconds:
           deprecated: true
           format: int32
-          type: integer
-        time:
-          format: int64
           type: integer
         date:
           deprecated: true
@@ -607,13 +457,13 @@ components:
       example:
         expiryDate:
           date: 1
-          seconds: 0
+          seconds: 6
           hours: 5
           month: 5
           year: 7
           timezoneOffset: 3
           minutes: 2
-          time: 6
+          time: 0
           day: 9
         otpId: otpId
         messages:
@@ -634,6 +484,51 @@ components:
           type: string
         expiryDate:
           $ref: '#/components/schemas/Date'
+      type: object
+    UserDetailsUpdateRequest:
+      example:
+        password: password
+        otpId: otpId
+        displayName: displayName
+        otpCode: otpCode
+        email: email
+      properties:
+        otpId:
+          type: string
+        otpCode:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      type: object
+    SigninRequest:
+      example:
+        emailOrUsername: emailOrUsername
+        password: password
+      properties:
+        emailOrUsername:
+          type: string
+        password:
+          type: string
+      type: object
+    SignupRequest:
+      example:
+        password: password
+        displayName: displayName
+        email: email
+        username: username
+      properties:
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
       type: object
     OtpRequest:
       example:

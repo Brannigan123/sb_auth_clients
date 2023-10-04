@@ -13,10 +13,10 @@
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Date {
-    #[serde(rename = "seconds", skip_serializing_if = "Option::is_none")]
-    pub seconds: Option<i32>,
     #[serde(rename = "time", skip_serializing_if = "Option::is_none")]
     pub time: Option<i64>,
+    #[serde(rename = "seconds", skip_serializing_if = "Option::is_none")]
+    pub seconds: Option<i32>,
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
     pub date: Option<i32>,
     #[serde(rename = "month", skip_serializing_if = "Option::is_none")]
@@ -36,8 +36,8 @@ pub struct Date {
 impl Date {
     pub fn new() -> Date {
         Date {
-            seconds: None,
             time: None,
+            seconds: None,
             date: None,
             month: None,
             hours: None,

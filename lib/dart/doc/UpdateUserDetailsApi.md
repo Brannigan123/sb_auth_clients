@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **updateUserDetails**
-> ApiResponse updateUserDetails(userDetailsUpdateRequest)
+> AuthResponse updateUserDetails(userDetailsUpdateRequest)
 
 
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponse**](ApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **refesh_token**
-> TokenRefreshResponse refesh_token(token_refresh_request)
+> AuthResponse refesh_token(token_refresh_request)
 
 
 
@@ -18,8 +18,8 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
+from authclient.models.auth_response import AuthResponse
 from authclient.models.token_refresh_request import TokenRefreshRequest
-from authclient.models.token_refresh_response import TokenRefreshResponse
 from authclient.rest import ApiException
 from pprint import pprint
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TokenRefreshResponse**](TokenRefreshResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

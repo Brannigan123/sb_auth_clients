@@ -38,19 +38,19 @@ public class DateTest {
     }
 
     /**
-     * Test the property 'seconds'
-     */
-    @Test
-    public void secondsTest() {
-        // TODO: test seconds
-    }
-
-    /**
      * Test the property 'time'
      */
     @Test
     public void timeTest() {
         // TODO: test time
+    }
+
+    /**
+     * Test the property 'seconds'
+     */
+    @Test
+    public void secondsTest() {
+        // TODO: test seconds
     }
 
     /**

@@ -33,7 +33,7 @@ func (r ApiSignoutRequest) SignoutRequest(signoutRequest SignoutRequest) ApiSign
 	return r
 }
 
-func (r ApiSignoutRequest) Execute() (*ApiResponse, *http.Response, error) {
+func (r ApiSignoutRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.SignoutExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *SignoutAPIService) Signout(ctx context.Context) ApiSignoutRequest {
 }
 
 // Execute executes the request
-//  @return ApiResponse
-func (a *SignoutAPIService) SignoutExecute(r ApiSignoutRequest) (*ApiResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *SignoutAPIService) SignoutExecute(r ApiSignoutRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignoutAPIService.Signout")

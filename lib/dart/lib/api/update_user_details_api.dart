@@ -48,7 +48,7 @@ class UpdateUserDetailsApi {
   /// Parameters:
   ///
   /// * [UserDetailsUpdateRequest] userDetailsUpdateRequest (required):
-  Future<ApiResponse?> updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest,) async {
+  Future<AuthResponse?> updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest,) async {
     final response = await updateUserDetailsWithHttpInfo(userDetailsUpdateRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -57,7 +57,7 @@ class UpdateUserDetailsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ApiResponse',) as ApiResponse;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AuthResponse',) as AuthResponse;
     
     }
     return null;

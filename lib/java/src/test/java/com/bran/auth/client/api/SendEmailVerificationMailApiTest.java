@@ -13,7 +13,7 @@
 
 package com.bran.auth.client.api;
 
-import com.bran.auth.client.model.ModelApiResponse;
+import com.bran.auth.client.model.OtpRequestResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -43,7 +43,7 @@ public class SendEmailVerificationMailApiTest {
      */
     @Test
     public void sendVerificationEmailTest() {
-        ModelApiResponse response = api.sendVerificationEmail();
+        OtpRequestResponse response = api.sendVerificationEmail();
 
         // TODO: test validations
     }

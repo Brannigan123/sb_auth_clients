@@ -33,7 +33,7 @@ func (r ApiRefeshTokenRequest) TokenRefreshRequest(tokenRefreshRequest TokenRefr
 	return r
 }
 
-func (r ApiRefeshTokenRequest) Execute() (*TokenRefreshResponse, *http.Response, error) {
+func (r ApiRefeshTokenRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.RefeshTokenExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *RefreshTokenAPIService) RefeshToken(ctx context.Context) ApiRefeshToken
 }
 
 // Execute executes the request
-//  @return TokenRefreshResponse
-func (a *RefreshTokenAPIService) RefeshTokenExecute(r ApiRefeshTokenRequest) (*TokenRefreshResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *RefreshTokenAPIService) RefeshTokenExecute(r ApiRefeshTokenRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TokenRefreshResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RefreshTokenAPIService.RefeshToken")

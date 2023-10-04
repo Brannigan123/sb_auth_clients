@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## Register
 
-> SignupResponse Register(ctx).SignupRequest(signupRequest).Execute()
+> AuthResponse Register(ctx).SignupRequest(signupRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RegisterAPI.Register``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `Register`: SignupResponse
+    // response from `Register`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `RegisterAPI.Register`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SignupResponse**](SignupResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

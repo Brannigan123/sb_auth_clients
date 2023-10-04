@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**seconds** | **Integer** |  |  [optional] |
 |**time** | **Long** |  |  [optional] |
+|**seconds** | **Integer** |  |  [optional] |
 |**date** | **Integer** |  |  [optional] |
 |**month** | **Integer** |  |  [optional] |
 |**hours** | **Integer** |  |  [optional] |

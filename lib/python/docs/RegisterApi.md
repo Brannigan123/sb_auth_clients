@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **register**
-> SignupResponse register(signup_request)
+> AuthResponse register(signup_request)
 
 
 
@@ -18,8 +18,8 @@ Method | HTTP request | Description
 import time
 import os
 import authclient
+from authclient.models.auth_response import AuthResponse
 from authclient.models.signup_request import SignupRequest
-from authclient.models.signup_response import SignupResponse
 from authclient.rest import ApiException
 from pprint import pprint
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SignupResponse**](SignupResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

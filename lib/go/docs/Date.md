@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Seconds** | Pointer to **int32** |  | [optional] 
 **Time** | Pointer to **int64** |  | [optional] 
+**Seconds** | Pointer to **int32** |  | [optional] 
 **Date** | Pointer to **int32** |  | [optional] 
 **Month** | Pointer to **int32** |  | [optional] 
 **Hours** | Pointer to **int32** |  | [optional] 
@@ -33,31 +33,6 @@ NewDateWithDefaults instantiates a new Date object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetSeconds
-
-`func (o *Date) GetSeconds() int32`
-
-GetSeconds returns the Seconds field if non-nil, zero value otherwise.
-
-### GetSecondsOk
-
-`func (o *Date) GetSecondsOk() (*int32, bool)`
-
-GetSecondsOk returns a tuple with the Seconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeconds
-
-`func (o *Date) SetSeconds(v int32)`
-
-SetSeconds sets Seconds field to given value.
-
-### HasSeconds
-
-`func (o *Date) HasSeconds() bool`
-
-HasSeconds returns a boolean if a field has been set.
-
 ### GetTime
 
 `func (o *Date) GetTime() int64`
@@ -82,6 +57,31 @@ SetTime sets Time field to given value.
 `func (o *Date) HasTime() bool`
 
 HasTime returns a boolean if a field has been set.
+
+### GetSeconds
+
+`func (o *Date) GetSeconds() int32`
+
+GetSeconds returns the Seconds field if non-nil, zero value otherwise.
+
+### GetSecondsOk
+
+`func (o *Date) GetSecondsOk() (*int32, bool)`
+
+GetSecondsOk returns a tuple with the Seconds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeconds
+
+`func (o *Date) SetSeconds(v int32)`
+
+SetSeconds sets Seconds field to given value.
+
+### HasSeconds
+
+`func (o *Date) HasSeconds() bool`
+
+HasSeconds returns a boolean if a field has been set.
 
 ### GetDate
 

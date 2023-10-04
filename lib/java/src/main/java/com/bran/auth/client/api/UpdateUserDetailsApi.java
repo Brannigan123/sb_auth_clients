@@ -2,7 +2,7 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
-import com.bran.auth.client.model.ModelApiResponse;
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.UserDetailsUpdateRequest;
 
 import java.util.Collections;
@@ -51,10 +51,10 @@ public class UpdateUserDetailsApi {
      * 
      * <p><b>200</b> - Default response
      * @param userDetailsUpdateRequest  (required)
-     * @return ModelApiResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ModelApiResponse updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest) throws RestClientException {
+    public AuthResponse updateUserDetails(UserDetailsUpdateRequest userDetailsUpdateRequest) throws RestClientException {
         return updateUserDetailsWithHttpInfo(userDetailsUpdateRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class UpdateUserDetailsApi {
      * 
      * <p><b>200</b> - Default response
      * @param userDetailsUpdateRequest  (required)
-     * @return ResponseEntity&lt;ModelApiResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<ModelApiResponse> updateUserDetailsWithHttpInfo(UserDetailsUpdateRequest userDetailsUpdateRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> updateUserDetailsWithHttpInfo(UserDetailsUpdateRequest userDetailsUpdateRequest) throws RestClientException {
         Object localVarPostBody = userDetailsUpdateRequest;
         
         // verify the required parameter 'userDetailsUpdateRequest' is set
@@ -89,7 +89,7 @@ public class UpdateUserDetailsApi {
 
         String[] localVarAuthNames = new String[] { "Authentication" };
 
-        ParameterizedTypeReference<ModelApiResponse> localReturnType = new ParameterizedTypeReference<ModelApiResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/authenticated/update-user-details", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

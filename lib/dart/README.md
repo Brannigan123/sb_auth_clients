@@ -70,20 +70,18 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ApiResponse](doc//ApiResponse.md)
+ - [AuthResponse](doc//AuthResponse.md)
  - [EmailConfirmationOtpSubmitRequest](doc//EmailConfirmationOtpSubmitRequest.md)
  - [ModelDate](doc//ModelDate.md)
  - [OtpRequest](doc//OtpRequest.md)
  - [OtpRequestResponse](doc//OtpRequestResponse.md)
  - [Permission](doc//Permission.md)
+ - [ResponseUserDetails](doc//ResponseUserDetails.md)
  - [Role](doc//Role.md)
  - [SigninRequest](doc//SigninRequest.md)
- - [SigninResponse](doc//SigninResponse.md)
  - [SignoutRequest](doc//SignoutRequest.md)
  - [SignupRequest](doc//SignupRequest.md)
- - [SignupResponse](doc//SignupResponse.md)
  - [TokenRefreshRequest](doc//TokenRefreshRequest.md)
- - [TokenRefreshResponse](doc//TokenRefreshResponse.md)
  - [UserDetailsUpdateRequest](doc//UserDetailsUpdateRequest.md)
 
 

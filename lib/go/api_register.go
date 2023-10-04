@@ -33,7 +33,7 @@ func (r ApiRegisterRequest) SignupRequest(signupRequest SignupRequest) ApiRegist
 	return r
 }
 
-func (r ApiRegisterRequest) Execute() (*SignupResponse, *http.Response, error) {
+func (r ApiRegisterRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.RegisterExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *RegisterAPIService) Register(ctx context.Context) ApiRegisterRequest {
 }
 
 // Execute executes the request
-//  @return SignupResponse
-func (a *RegisterAPIService) RegisterExecute(r ApiRegisterRequest) (*SignupResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *RegisterAPIService) RegisterExecute(r ApiRegisterRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SignupResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RegisterAPIService.Register")

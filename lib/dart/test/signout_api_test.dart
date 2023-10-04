@@ -17,7 +17,7 @@ void main() {
   // final instance = SignoutApi();
 
   group('tests for SignoutApi', () {
-    //Future<ApiResponse> signout(SignoutRequest signoutRequest) async
+    //Future<AuthResponse> signout(SignoutRequest signoutRequest) async
     test('test signout', () async {
       // TODO
     });

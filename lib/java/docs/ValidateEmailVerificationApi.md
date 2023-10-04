@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## validateEmailVerification
 
-> ModelApiResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
+> AuthResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
 
 
 
@@ -32,7 +32,7 @@ public class Example {
         ValidateEmailVerificationApi apiInstance = new ValidateEmailVerificationApi(defaultClient);
         EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest = new EmailConfirmationOtpSubmitRequest(); // EmailConfirmationOtpSubmitRequest | 
         try {
-            ModelApiResponse result = apiInstance.validateEmailVerification(emailConfirmationOtpSubmitRequest);
+            AuthResponse result = apiInstance.validateEmailVerification(emailConfirmationOtpSubmitRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ValidateEmailVerificationApi#validateEmailVerification");
@@ -54,7 +54,7 @@ public class Example {
 
 ### Return type
 
-[**ModelApiResponse**](ModelApiResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

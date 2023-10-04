@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { SigninRequest } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
-import { SigninResponse } from '../../../../../com/bran/auth/client/model';
+import { SigninRequest } from '../../../../../com/bran/auth/client/model';
 /**
  * AuthenticateApi - axios parameter creator
  * @export
@@ -82,7 +82,7 @@ export const AuthenticateApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authenticate(signinRequest: SigninRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SigninResponse>> {
+        async authenticate(signinRequest: SigninRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authenticate(signinRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -102,7 +102,7 @@ export const AuthenticateApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authenticate(signinRequest: SigninRequest, options?: any): AxiosPromise<SigninResponse> {
+        authenticate(signinRequest: SigninRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.authenticate(signinRequest, options).then((request) => request(axios, basePath));
         },
     };

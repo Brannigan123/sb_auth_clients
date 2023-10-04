@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seconds** | **int** |  | [optional] 
 **time** | **int** |  | [optional] 
+**seconds** | **int** |  | [optional] 
 **var_date** | **int** |  | [optional] 
 **month** | **int** |  | [optional] 
 **hours** | **int** |  | [optional] 

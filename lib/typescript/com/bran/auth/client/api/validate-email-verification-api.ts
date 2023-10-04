@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { ApiResponse } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
 import { EmailConfirmationOtpSubmitRequest } from '../../../../../com/bran/auth/client/model';
 /**
@@ -82,7 +82,7 @@ export const ValidateEmailVerificationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponse>> {
+        async validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.validateEmailVerification(emailConfirmationOtpSubmitRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -102,7 +102,7 @@ export const ValidateEmailVerificationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: any): AxiosPromise<ApiResponse> {
+        validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.validateEmailVerification(emailConfirmationOtpSubmitRequest, options).then((request) => request(axios, basePath));
         },
     };

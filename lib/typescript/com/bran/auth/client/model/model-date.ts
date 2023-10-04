@@ -24,15 +24,15 @@ export interface ModelDate {
      * 
      * @type {number}
      * @memberof ModelDate
-     * @deprecated
      */
-    'seconds'?: number;
+    'time'?: number;
     /**
      * 
      * @type {number}
      * @memberof ModelDate
+     * @deprecated
      */
-    'time'?: number;
+    'seconds'?: number;
     /**
      * 
      * @type {number}

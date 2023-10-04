@@ -19,8 +19,8 @@ import warnings
 from pydantic import validate_arguments, ValidationError
 from typing import overload, Optional, Union, Awaitable
 
+from authclient.models.auth_response import AuthResponse
 from authclient.models.signin_request import SigninRequest
-from authclient.models.signin_response import SigninResponse
 
 from authclient.api_client import ApiClient
 from authclient.api_response import ApiResponse
@@ -43,15 +43,15 @@ class AuthenticateApi:
         self.api_client = api_client
 
     @overload
-    async def authenticate(self, signin_request : SigninRequest, **kwargs) -> SigninResponse:  # noqa: E501
+    async def authenticate(self, signin_request : SigninRequest, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @overload
-    def authenticate(self, signin_request : SigninRequest, async_req: Optional[bool]=True, **kwargs) -> SigninResponse:  # noqa: E501
+    def authenticate(self, signin_request : SigninRequest, async_req: Optional[bool]=True, **kwargs) -> AuthResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def authenticate(self, signin_request : SigninRequest, async_req: Optional[bool]=None, **kwargs) -> Union[SigninResponse, Awaitable[SigninResponse]]:  # noqa: E501
+    def authenticate(self, signin_request : SigninRequest, async_req: Optional[bool]=None, **kwargs) -> Union[AuthResponse, Awaitable[AuthResponse]]:  # noqa: E501
         """authenticate  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -71,7 +71,7 @@ class AuthenticateApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: SigninResponse
+        :rtype: AuthResponse
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
@@ -115,7 +115,7 @@ class AuthenticateApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(SigninResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(AuthResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -170,7 +170,7 @@ class AuthenticateApi:
         _auth_settings = []  # noqa: E501
 
         _response_types_map = {
-            '200': "SigninResponse",
+            '200': "AuthResponse",
         }
 
         return self.api_client.call_api(

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## register
 
-> crate::models::SignupResponse register(signup_request)
+> crate::models::AuthResponse register(signup_request)
 
 
 ### Parameters
@@ -22,7 +22,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SignupResponse**](SignupResponse.md)
+[**crate::models::AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

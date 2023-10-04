@@ -2,8 +2,8 @@ package com.bran.auth.client.api;
 
 import com.bran.auth.client.ApiClient;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SigninRequest;
-import com.bran.auth.client.model.SigninResponse;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,10 +51,10 @@ public class AuthenticateApi {
      * 
      * <p><b>200</b> - Default response
      * @param signinRequest  (required)
-     * @return SigninResponse
+     * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public SigninResponse authenticate(SigninRequest signinRequest) throws RestClientException {
+    public AuthResponse authenticate(SigninRequest signinRequest) throws RestClientException {
         return authenticateWithHttpInfo(signinRequest).getBody();
     }
 
@@ -63,10 +63,10 @@ public class AuthenticateApi {
      * 
      * <p><b>200</b> - Default response
      * @param signinRequest  (required)
-     * @return ResponseEntity&lt;SigninResponse&gt;
+     * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<SigninResponse> authenticateWithHttpInfo(SigninRequest signinRequest) throws RestClientException {
+    public ResponseEntity<AuthResponse> authenticateWithHttpInfo(SigninRequest signinRequest) throws RestClientException {
         Object localVarPostBody = signinRequest;
         
         // verify the required parameter 'signinRequest' is set
@@ -89,7 +89,7 @@ public class AuthenticateApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<SigninResponse> localReturnType = new ParameterizedTypeReference<SigninResponse>() {};
+        ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/public/authenticate", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

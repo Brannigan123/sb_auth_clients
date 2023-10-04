@@ -19,7 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RefeshTokenSuccess {
-    Status200(crate::models::TokenRefreshResponse),
+    Status200(crate::models::AuthResponse),
     UnknownValue(serde_json::Value),
 }
 

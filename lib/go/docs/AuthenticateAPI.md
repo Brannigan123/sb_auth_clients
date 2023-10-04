@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## Authenticate
 
-> SigninResponse Authenticate(ctx).SigninRequest(signinRequest).Execute()
+> AuthResponse Authenticate(ctx).SigninRequest(signinRequest).Execute()
 
 
 
@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthenticateAPI.Authenticate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `Authenticate`: SigninResponse
+    // response from `Authenticate`: AuthResponse
     fmt.Fprintf(os.Stdout, "Response from `AuthenticateAPI.Authenticate`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SigninResponse**](SigninResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

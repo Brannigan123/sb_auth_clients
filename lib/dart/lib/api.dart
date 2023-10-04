@@ -37,20 +37,18 @@ part 'api/signout_api.dart';
 part 'api/update_user_details_api.dart';
 part 'api/validate_email_verification_api.dart';
 
-part 'model/api_response.dart';
+part 'model/auth_response.dart';
 part 'model/email_confirmation_otp_submit_request.dart';
 part 'model/model_date.dart';
 part 'model/otp_request.dart';
 part 'model/otp_request_response.dart';
 part 'model/permission.dart';
+part 'model/response_user_details.dart';
 part 'model/role.dart';
 part 'model/signin_request.dart';
-part 'model/signin_response.dart';
 part 'model/signout_request.dart';
 part 'model/signup_request.dart';
-part 'model/signup_response.dart';
 part 'model/token_refresh_request.dart';
-part 'model/token_refresh_response.dart';
 part 'model/user_details_update_request.dart';
 
 

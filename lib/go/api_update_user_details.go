@@ -33,7 +33,7 @@ func (r ApiUpdateUserDetailsRequest) UserDetailsUpdateRequest(userDetailsUpdateR
 	return r
 }
 
-func (r ApiUpdateUserDetailsRequest) Execute() (*ApiResponse, *http.Response, error) {
+func (r ApiUpdateUserDetailsRequest) Execute() (*AuthResponse, *http.Response, error) {
 	return r.ApiService.UpdateUserDetailsExecute(r)
 }
 
@@ -51,13 +51,13 @@ func (a *UpdateUserDetailsAPIService) UpdateUserDetails(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return ApiResponse
-func (a *UpdateUserDetailsAPIService) UpdateUserDetailsExecute(r ApiUpdateUserDetailsRequest) (*ApiResponse, *http.Response, error) {
+//  @return AuthResponse
+func (a *UpdateUserDetailsAPIService) UpdateUserDetailsExecute(r ApiUpdateUserDetailsRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiResponse
+		localVarReturnValue  *AuthResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UpdateUserDetailsAPIService.UpdateUserDetails")

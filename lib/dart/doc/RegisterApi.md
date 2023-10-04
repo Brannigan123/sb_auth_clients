@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **register**
-> SignupResponse register(signupRequest)
+> AuthResponse register(signupRequest)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SignupResponse**](SignupResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

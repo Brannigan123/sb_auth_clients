@@ -13,8 +13,8 @@
 
 package com.bran.auth.client.api;
 
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.SigninRequest;
-import com.bran.auth.client.model.SigninResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -45,7 +45,7 @@ public class AuthenticateApiTest {
     @Test
     public void authenticateTest() {
         SigninRequest signinRequest = null;
-        SigninResponse response = api.authenticate(signinRequest);
+        AuthResponse response = api.authenticate(signinRequest);
 
         // TODO: test validations
     }

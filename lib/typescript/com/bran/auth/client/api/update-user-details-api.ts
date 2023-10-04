@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../../../../../base';
 // @ts-ignore
-import { ApiResponse } from '../../../../../com/bran/auth/client/model';
+import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
 import { UserDetailsUpdateRequest } from '../../../../../com/bran/auth/client/model';
 /**
@@ -86,7 +86,7 @@ export const UpdateUserDetailsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateUserDetails(userDetailsUpdateRequest: UserDetailsUpdateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApiResponse>> {
+        async updateUserDetails(userDetailsUpdateRequest: UserDetailsUpdateRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateUserDetails(userDetailsUpdateRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -106,7 +106,7 @@ export const UpdateUserDetailsApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateUserDetails(userDetailsUpdateRequest: UserDetailsUpdateRequest, options?: any): AxiosPromise<ApiResponse> {
+        updateUserDetails(userDetailsUpdateRequest: UserDetailsUpdateRequest, options?: any): AxiosPromise<AuthResponse> {
             return localVarFp.updateUserDetails(userDetailsUpdateRequest, options).then((request) => request(axios, basePath));
         },
     };

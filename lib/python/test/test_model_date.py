@@ -36,8 +36,8 @@ class TestModelDate(unittest.TestCase):
         model = ModelDate()  # noqa: E501
         if include_optional:
             return ModelDate(
-                seconds = 56,
                 time = 56,
+                seconds = 56,
                 var_date = 56,
                 month = 56,
                 hours = 56,

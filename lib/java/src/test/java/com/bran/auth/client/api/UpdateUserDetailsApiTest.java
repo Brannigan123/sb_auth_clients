@@ -13,7 +13,7 @@
 
 package com.bran.auth.client.api;
 
-import com.bran.auth.client.model.ModelApiResponse;
+import com.bran.auth.client.model.AuthResponse;
 import com.bran.auth.client.model.UserDetailsUpdateRequest;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -45,7 +45,7 @@ public class UpdateUserDetailsApiTest {
     @Test
     public void updateUserDetailsTest() {
         UserDetailsUpdateRequest userDetailsUpdateRequest = null;
-        ModelApiResponse response = api.updateUserDetails(userDetailsUpdateRequest);
+        AuthResponse response = api.updateUserDetails(userDetailsUpdateRequest);
 
         // TODO: test validations
     }

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 ## register
 
-> SignupResponse register(signupRequest)
+> AuthResponse register(signupRequest)
 
 
 
@@ -32,7 +32,7 @@ public class Example {
         RegisterApi apiInstance = new RegisterApi(defaultClient);
         SignupRequest signupRequest = new SignupRequest(); // SignupRequest | 
         try {
-            SignupResponse result = apiInstance.register(signupRequest);
+            AuthResponse result = apiInstance.register(signupRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling RegisterApi#register");
@@ -54,7 +54,7 @@ public class Example {
 
 ### Return type
 
-[**SignupResponse**](SignupResponse.md)
+[**AuthResponse**](AuthResponse.md)
 
 ### Authorization
 

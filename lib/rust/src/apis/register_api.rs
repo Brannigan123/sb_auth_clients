@@ -19,7 +19,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RegisterSuccess {
-    Status200(crate::models::SignupResponse),
+    Status200(crate::models::AuthResponse),
     UnknownValue(serde_json::Value),
 }
 
