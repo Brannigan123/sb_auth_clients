@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 *AuthenticateAPI* | [**Authenticate**](docs/AuthenticateAPI.md#authenticate) | **Post** /api/v1/auth/public/authenticate | 
 *RefreshTokenAPI* | [**RefeshToken**](docs/RefreshTokenAPI.md#refeshtoken) | **Post** /api/v1/auth/public/refresh-token | 
 *RegisterAPI* | [**Register**](docs/RegisterAPI.md#register) | **Post** /api/v1/auth/public/register | 
-*SendCustomEmailVerificationAPI* | [**PostMethodName**](docs/SendCustomEmailVerificationAPI.md#postmethodname) | **Post** /api/v1/auth/public/request-otp | 
+*SendCustomEmailVerificationAPI* | [**RequestOtp**](docs/SendCustomEmailVerificationAPI.md#requestotp) | **Post** /api/v1/auth/public/request-otp | 
 *SendEmailVerificationMailAPI* | [**SendVerificationEmail**](docs/SendEmailVerificationMailAPI.md#sendverificationemail) | **Post** /api/v1/auth/authenticated/send-email-verification-mail | 
 *SignoutAPI* | [**Signout**](docs/SignoutAPI.md#signout) | **Post** /api/v1/auth/authenticated/logout | 
 *UpdateUserDetailsAPI* | [**UpdateUserDetails**](docs/UpdateUserDetailsAPI.md#updateuserdetails) | **Post** /api/v1/auth/authenticated/update-user-details | 
@@ -108,7 +108,18 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### Authentication
+
+- **Type**: HTTP Bearer token authentication
+
+Example
+
+```golang
+auth := context.WithValue(context.Background(), sw.ContextAccessToken, "BEARER_TOKEN_STRING")
+r, err := client.Service.Operation(auth, args)
+```
 
 
 ## Documentation for Utility Methods

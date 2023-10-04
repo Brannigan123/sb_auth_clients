@@ -21,6 +21,7 @@ All URIs are relative to *http://localhost*
 import com.bran.auth.client.ApiClient;
 import com.bran.auth.client.ApiException;
 import com.bran.auth.client.Configuration;
+import com.bran.auth.client.auth.*;
 import com.bran.auth.client.models.*;
 import com.bran.auth.client.api.UpdateUserDetailsApi;
 
@@ -28,6 +29,10 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: Authentication
+        HttpBearerAuth Authentication = (HttpBearerAuth) defaultClient.getAuthentication("Authentication");
+        Authentication.setBearerToken("BEARER TOKEN");
 
         UpdateUserDetailsApi apiInstance = new UpdateUserDetailsApi(defaultClient);
         UserDetailsUpdateRequest userDetailsUpdateRequest = new UserDetailsUpdateRequest(); // UserDetailsUpdateRequest | 
@@ -58,7 +63,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[Authentication](../README.md#Authentication)
 
 ### HTTP request headers
 

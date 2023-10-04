@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **seconds** | **int** |  | [optional] 
 **time** | **int** |  | [optional] 
-**year** | **int** |  | [optional] 
 **date** | **int** |  | [optional] 
 **month** | **int** |  | [optional] 
 **hours** | **int** |  | [optional] 
 **minutes** | **int** |  | [optional] 
+**year** | **int** |  | [optional] 
 **day** | **int** |  | [optional] 
 **timezoneOffset** | **int** |  | [optional] 
 

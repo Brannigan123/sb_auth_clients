@@ -17,8 +17,6 @@ pub struct Date {
     pub seconds: Option<i32>,
     #[serde(rename = "time", skip_serializing_if = "Option::is_none")]
     pub time: Option<i64>,
-    #[serde(rename = "year", skip_serializing_if = "Option::is_none")]
-    pub year: Option<i32>,
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
     pub date: Option<i32>,
     #[serde(rename = "month", skip_serializing_if = "Option::is_none")]
@@ -27,6 +25,8 @@ pub struct Date {
     pub hours: Option<i32>,
     #[serde(rename = "minutes", skip_serializing_if = "Option::is_none")]
     pub minutes: Option<i32>,
+    #[serde(rename = "year", skip_serializing_if = "Option::is_none")]
+    pub year: Option<i32>,
     #[serde(rename = "day", skip_serializing_if = "Option::is_none")]
     pub day: Option<i32>,
     #[serde(rename = "timezoneOffset", skip_serializing_if = "Option::is_none")]
@@ -38,11 +38,11 @@ impl Date {
         Date {
             seconds: None,
             time: None,
-            year: None,
             date: None,
             month: None,
             hours: None,
             minutes: None,
+            year: None,
             day: None,
             timezone_offset: None,
         }

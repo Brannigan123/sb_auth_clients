@@ -20,6 +20,12 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:authclient/api.dart';
+// TODO Configure HTTP Bearer authorization: Authentication
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('Authentication').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('Authentication').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = SignoutApi();
 final signoutRequest = SignoutRequest(); // SignoutRequest | 
@@ -44,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authentication](../README.md#Authentication)
 
 ### HTTP request headers
 

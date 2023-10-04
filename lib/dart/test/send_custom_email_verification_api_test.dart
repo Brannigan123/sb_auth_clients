@@ -17,8 +17,8 @@ void main() {
   // final instance = SendCustomEmailVerificationApi();
 
   group('tests for SendCustomEmailVerificationApi', () {
-    //Future<OtpRequestResponse> postMethodName(OtpRequest otpRequest) async
-    test('test postMethodName', () async {
+    //Future<OtpRequestResponse> requestOtp(OtpRequest otpRequest) async
+    test('test requestOtp', () async {
       // TODO
     });
 

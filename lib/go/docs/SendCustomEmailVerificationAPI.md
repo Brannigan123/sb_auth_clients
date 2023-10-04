@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PostMethodName**](SendCustomEmailVerificationAPI.md#PostMethodName) | **Post** /api/v1/auth/public/request-otp | 
+[**RequestOtp**](SendCustomEmailVerificationAPI.md#RequestOtp) | **Post** /api/v1/auth/public/request-otp | 
 
 
 
-## PostMethodName
+## RequestOtp
 
-> OtpRequestResponse PostMethodName(ctx).OtpRequest(otpRequest).Execute()
+> OtpRequestResponse RequestOtp(ctx).OtpRequest(otpRequest).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SendCustomEmailVerificationAPI.PostMethodName(context.Background()).OtpRequest(otpRequest).Execute()
+    resp, r, err := apiClient.SendCustomEmailVerificationAPI.RequestOtp(context.Background()).OtpRequest(otpRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `SendCustomEmailVerificationAPI.PostMethodName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `SendCustomEmailVerificationAPI.RequestOtp``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PostMethodName`: OtpRequestResponse
-    fmt.Fprintf(os.Stdout, "Response from `SendCustomEmailVerificationAPI.PostMethodName`: %v\n", resp)
+    // response from `RequestOtp`: OtpRequestResponse
+    fmt.Fprintf(os.Stdout, "Response from `SendCustomEmailVerificationAPI.RequestOtp`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPostMethodNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRequestOtpRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

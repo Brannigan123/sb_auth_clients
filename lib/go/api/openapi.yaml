@@ -18,7 +18,7 @@ tags:
   name: Refresh-token
 - description: Register a new user
   name: Register
-- description: Send an email verification mail with OTP with custom message
+- description: Send an email verification mail with OTP and custom message
   name: Send custom email verification
 - description: Validate an email verification OTP
   name: Validate email verification
@@ -39,6 +39,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
           description: Default response
+      security:
+      - Authentication: []
       tags:
       - Signout
   /api/v1/auth/authenticated/send-email-verification-mail:
@@ -51,6 +53,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
           description: Default response
+      security:
+      - Authentication: []
       tags:
       - Send email verification mail
   /api/v1/auth/authenticated/update-user-details:
@@ -69,6 +73,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
           description: Default response
+      security:
+      - Authentication: []
       tags:
       - Update user details
   /api/v1/auth/public/authenticate:
@@ -127,7 +133,7 @@ paths:
       - Register
   /api/v1/auth/public/request-otp:
     post:
-      operationId: postMethodName
+      operationId: requestOtp
       requestBody:
         content:
           '*/*':
@@ -536,13 +542,13 @@ components:
       type: integer
     Date:
       example:
-        date: 5
+        date: 1
         seconds: 0
-        hours: 2
+        hours: 5
         month: 5
-        year: 1
+        year: 7
         timezoneOffset: 3
-        minutes: 7
+        minutes: 2
         time: 6
         day: 9
       properties:
@@ -552,10 +558,6 @@ components:
           type: integer
         time:
           format: int64
-          type: integer
-        year:
-          deprecated: true
-          format: int32
           type: integer
         date:
           deprecated: true
@@ -573,6 +575,10 @@ components:
           deprecated: true
           format: int32
           type: integer
+        year:
+          deprecated: true
+          format: int32
+          type: integer
         day:
           deprecated: true
           format: int32
@@ -585,13 +591,13 @@ components:
     OtpRequestResponse:
       example:
         expiryDate:
-          date: 5
+          date: 1
           seconds: 0
-          hours: 2
+          hours: 5
           month: 5
-          year: 1
+          year: 7
           timezoneOffset: 3
-          minutes: 7
+          minutes: 2
           time: 6
           day: 9
         otpId: otpId
@@ -634,3 +640,9 @@ components:
         code:
           type: string
       type: object
+  securitySchemes:
+    Authentication:
+      bearerFormat: JWT
+      in: header
+      scheme: bearer
+      type: http

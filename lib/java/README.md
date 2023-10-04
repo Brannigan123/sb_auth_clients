@@ -116,7 +116,7 @@ Class | Method | HTTP request | Description
 *AuthenticateApi* | [**authenticate**](docs/AuthenticateApi.md#authenticate) | **POST** /api/v1/auth/public/authenticate | 
 *RefreshTokenApi* | [**refeshToken**](docs/RefreshTokenApi.md#refeshToken) | **POST** /api/v1/auth/public/refresh-token | 
 *RegisterApi* | [**register**](docs/RegisterApi.md#register) | **POST** /api/v1/auth/public/register | 
-*SendCustomEmailVerificationApi* | [**postMethodName**](docs/SendCustomEmailVerificationApi.md#postMethodName) | **POST** /api/v1/auth/public/request-otp | 
+*SendCustomEmailVerificationApi* | [**requestOtp**](docs/SendCustomEmailVerificationApi.md#requestOtp) | **POST** /api/v1/auth/public/request-otp | 
 *SendEmailVerificationMailApi* | [**sendVerificationEmail**](docs/SendEmailVerificationMailApi.md#sendVerificationEmail) | **POST** /api/v1/auth/authenticated/send-email-verification-mail | 
 *SignoutApi* | [**signout**](docs/SignoutApi.md#signout) | **POST** /api/v1/auth/authenticated/logout | 
 *UpdateUserDetailsApi* | [**updateUserDetails**](docs/UpdateUserDetailsApi.md#updateUserDetails) | **POST** /api/v1/auth/authenticated/update-user-details | 
@@ -145,7 +145,13 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+<a id="Authentication"></a>
+### Authentication
+
+
+- **Type**: HTTP Bearer Token authentication (JWT)
 
 
 ## Recommendation

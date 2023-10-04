@@ -54,14 +54,6 @@ public class DateTest {
     }
 
     /**
-     * Test the property 'year'
-     */
-    @Test
-    public void yearTest() {
-        // TODO: test year
-    }
-
-    /**
      * Test the property 'date'
      */
     @Test
@@ -91,6 +83,14 @@ public class DateTest {
     @Test
     public void minutesTest() {
         // TODO: test minutes
+    }
+
+    /**
+     * Test the property 'year'
+     */
+    @Test
+    public void yearTest() {
+        // TODO: test year
     }
 
     /**

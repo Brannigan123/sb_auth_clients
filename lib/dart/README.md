@@ -61,7 +61,7 @@ Class | Method | HTTP request | Description
 *AuthenticateApi* | [**authenticate**](doc//AuthenticateApi.md#authenticate) | **POST** /api/v1/auth/public/authenticate | 
 *RefreshTokenApi* | [**refeshToken**](doc//RefreshTokenApi.md#refeshtoken) | **POST** /api/v1/auth/public/refresh-token | 
 *RegisterApi* | [**register**](doc//RegisterApi.md#register) | **POST** /api/v1/auth/public/register | 
-*SendCustomEmailVerificationApi* | [**postMethodName**](doc//SendCustomEmailVerificationApi.md#postmethodname) | **POST** /api/v1/auth/public/request-otp | 
+*SendCustomEmailVerificationApi* | [**requestOtp**](doc//SendCustomEmailVerificationApi.md#requestotp) | **POST** /api/v1/auth/public/request-otp | 
 *SendEmailVerificationMailApi* | [**sendVerificationEmail**](doc//SendEmailVerificationMailApi.md#sendverificationemail) | **POST** /api/v1/auth/authenticated/send-email-verification-mail | 
 *SignoutApi* | [**signout**](doc//SignoutApi.md#signout) | **POST** /api/v1/auth/authenticated/logout | 
 *UpdateUserDetailsApi* | [**updateUserDetails**](doc//UpdateUserDetailsApi.md#updateuserdetails) | **POST** /api/v1/auth/authenticated/update-user-details | 
@@ -89,7 +89,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### Authentication
+
+- **Type**: HTTP Bearer authentication
 
 
 ## Author

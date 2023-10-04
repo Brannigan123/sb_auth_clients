@@ -26,8 +26,8 @@ class TestSendCustomEmailVerificationApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_post_method_name(self) -> None:
-        """Test case for post_method_name
+    def test_request_otp(self) -> None:
+        """Test case for request_otp
 
         """
         pass

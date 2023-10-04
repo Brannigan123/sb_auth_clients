@@ -43,21 +43,21 @@ class SendCustomEmailVerificationApi:
         self.api_client = api_client
 
     @overload
-    async def post_method_name(self, otp_request : OtpRequest, **kwargs) -> OtpRequestResponse:  # noqa: E501
+    async def request_otp(self, otp_request : OtpRequest, **kwargs) -> OtpRequestResponse:  # noqa: E501
         ...
 
     @overload
-    def post_method_name(self, otp_request : OtpRequest, async_req: Optional[bool]=True, **kwargs) -> OtpRequestResponse:  # noqa: E501
+    def request_otp(self, otp_request : OtpRequest, async_req: Optional[bool]=True, **kwargs) -> OtpRequestResponse:  # noqa: E501
         ...
 
     @validate_arguments
-    def post_method_name(self, otp_request : OtpRequest, async_req: Optional[bool]=None, **kwargs) -> Union[OtpRequestResponse, Awaitable[OtpRequestResponse]]:  # noqa: E501
-        """post_method_name  # noqa: E501
+    def request_otp(self, otp_request : OtpRequest, async_req: Optional[bool]=None, **kwargs) -> Union[OtpRequestResponse, Awaitable[OtpRequestResponse]]:  # noqa: E501
+        """request_otp  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_method_name(otp_request, async_req=True)
+        >>> thread = api.request_otp(otp_request, async_req=True)
         >>> result = thread.get()
 
         :param otp_request: (required)
@@ -75,20 +75,20 @@ class SendCustomEmailVerificationApi:
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
-            message = "Error! Please call the post_method_name_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
+            message = "Error! Please call the request_otp_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
         if async_req is not None:
             kwargs['async_req'] = async_req
-        return self.post_method_name_with_http_info(otp_request, **kwargs)  # noqa: E501
+        return self.request_otp_with_http_info(otp_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def post_method_name_with_http_info(self, otp_request : OtpRequest, **kwargs) -> ApiResponse:  # noqa: E501
-        """post_method_name  # noqa: E501
+    def request_otp_with_http_info(self, otp_request : OtpRequest, **kwargs) -> ApiResponse:  # noqa: E501
+        """request_otp  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_method_name_with_http_info(otp_request, async_req=True)
+        >>> thread = api.request_otp_with_http_info(otp_request, async_req=True)
         >>> result = thread.get()
 
         :param otp_request: (required)
@@ -140,7 +140,7 @@ class SendCustomEmailVerificationApi:
             if _key not in _all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method post_method_name" % _key
+                    " to method request_otp" % _key
                 )
             _params[_key] = _val
         del _params['kwargs']

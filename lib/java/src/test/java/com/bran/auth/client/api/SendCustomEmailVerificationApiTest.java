@@ -43,9 +43,9 @@ public class SendCustomEmailVerificationApiTest {
      *          if the Api call fails
      */
     @Test
-    public void postMethodNameTest() {
+    public void requestOtpTest() {
         OtpRequest otpRequest = null;
-        OtpRequestResponse response = api.postMethodName(otpRequest);
+        OtpRequestResponse response = api.requestOtp(otpRequest);
 
         // TODO: test validations
     }

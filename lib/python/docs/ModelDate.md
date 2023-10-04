@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **seconds** | **int** |  | [optional] 
 **time** | **int** |  | [optional] 
-**year** | **int** |  | [optional] 
 **var_date** | **int** |  | [optional] 
 **month** | **int** |  | [optional] 
 **hours** | **int** |  | [optional] 
 **minutes** | **int** |  | [optional] 
+**year** | **int** |  | [optional] 
 **day** | **int** |  | [optional] 
 **timezone_offset** | **int** |  | [optional] 
 

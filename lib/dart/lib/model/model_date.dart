@@ -15,11 +15,11 @@ class ModelDate {
   ModelDate({
     this.seconds,
     this.time,
-    this.year,
     this.date,
     this.month,
     this.hours,
     this.minutes,
+    this.year,
     this.day,
     this.timezoneOffset,
   });
@@ -39,14 +39,6 @@ class ModelDate {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   int? time;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  int? year;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -86,6 +78,14 @@ class ModelDate {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  int? year;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? day;
 
   ///
@@ -100,11 +100,11 @@ class ModelDate {
   bool operator ==(Object other) => identical(this, other) || other is ModelDate &&
     other.seconds == seconds &&
     other.time == time &&
-    other.year == year &&
     other.date == date &&
     other.month == month &&
     other.hours == hours &&
     other.minutes == minutes &&
+    other.year == year &&
     other.day == day &&
     other.timezoneOffset == timezoneOffset;
 
@@ -113,16 +113,16 @@ class ModelDate {
     // ignore: unnecessary_parenthesis
     (seconds == null ? 0 : seconds!.hashCode) +
     (time == null ? 0 : time!.hashCode) +
-    (year == null ? 0 : year!.hashCode) +
     (date == null ? 0 : date!.hashCode) +
     (month == null ? 0 : month!.hashCode) +
     (hours == null ? 0 : hours!.hashCode) +
     (minutes == null ? 0 : minutes!.hashCode) +
+    (year == null ? 0 : year!.hashCode) +
     (day == null ? 0 : day!.hashCode) +
     (timezoneOffset == null ? 0 : timezoneOffset!.hashCode);
 
   @override
-  String toString() => 'ModelDate[seconds=$seconds, time=$time, year=$year, date=$date, month=$month, hours=$hours, minutes=$minutes, day=$day, timezoneOffset=$timezoneOffset]';
+  String toString() => 'ModelDate[seconds=$seconds, time=$time, date=$date, month=$month, hours=$hours, minutes=$minutes, year=$year, day=$day, timezoneOffset=$timezoneOffset]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -135,11 +135,6 @@ class ModelDate {
       json[r'time'] = this.time;
     } else {
       json[r'time'] = null;
-    }
-    if (this.year != null) {
-      json[r'year'] = this.year;
-    } else {
-      json[r'year'] = null;
     }
     if (this.date != null) {
       json[r'date'] = this.date;
@@ -160,6 +155,11 @@ class ModelDate {
       json[r'minutes'] = this.minutes;
     } else {
       json[r'minutes'] = null;
+    }
+    if (this.year != null) {
+      json[r'year'] = this.year;
+    } else {
+      json[r'year'] = null;
     }
     if (this.day != null) {
       json[r'day'] = this.day;
@@ -195,11 +195,11 @@ class ModelDate {
       return ModelDate(
         seconds: mapValueOfType<int>(json, r'seconds'),
         time: mapValueOfType<int>(json, r'time'),
-        year: mapValueOfType<int>(json, r'year'),
         date: mapValueOfType<int>(json, r'date'),
         month: mapValueOfType<int>(json, r'month'),
         hours: mapValueOfType<int>(json, r'hours'),
         minutes: mapValueOfType<int>(json, r'minutes'),
+        year: mapValueOfType<int>(json, r'year'),
         day: mapValueOfType<int>(json, r'day'),
         timezoneOffset: mapValueOfType<int>(json, r'timezoneOffset'),
       );

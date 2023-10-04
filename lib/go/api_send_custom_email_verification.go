@@ -22,29 +22,29 @@ import (
 // SendCustomEmailVerificationAPIService SendCustomEmailVerificationAPI service
 type SendCustomEmailVerificationAPIService service
 
-type ApiPostMethodNameRequest struct {
+type ApiRequestOtpRequest struct {
 	ctx context.Context
 	ApiService *SendCustomEmailVerificationAPIService
 	otpRequest *OtpRequest
 }
 
-func (r ApiPostMethodNameRequest) OtpRequest(otpRequest OtpRequest) ApiPostMethodNameRequest {
+func (r ApiRequestOtpRequest) OtpRequest(otpRequest OtpRequest) ApiRequestOtpRequest {
 	r.otpRequest = &otpRequest
 	return r
 }
 
-func (r ApiPostMethodNameRequest) Execute() (*OtpRequestResponse, *http.Response, error) {
-	return r.ApiService.PostMethodNameExecute(r)
+func (r ApiRequestOtpRequest) Execute() (*OtpRequestResponse, *http.Response, error) {
+	return r.ApiService.RequestOtpExecute(r)
 }
 
 /*
-PostMethodName Method for PostMethodName
+RequestOtp Method for RequestOtp
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostMethodNameRequest
+ @return ApiRequestOtpRequest
 */
-func (a *SendCustomEmailVerificationAPIService) PostMethodName(ctx context.Context) ApiPostMethodNameRequest {
-	return ApiPostMethodNameRequest{
+func (a *SendCustomEmailVerificationAPIService) RequestOtp(ctx context.Context) ApiRequestOtpRequest {
+	return ApiRequestOtpRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *SendCustomEmailVerificationAPIService) PostMethodName(ctx context.Conte
 
 // Execute executes the request
 //  @return OtpRequestResponse
-func (a *SendCustomEmailVerificationAPIService) PostMethodNameExecute(r ApiPostMethodNameRequest) (*OtpRequestResponse, *http.Response, error) {
+func (a *SendCustomEmailVerificationAPIService) RequestOtpExecute(r ApiRequestOtpRequest) (*OtpRequestResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *SendCustomEmailVerificationAPIService) PostMethodNameExecute(r ApiPostM
 		localVarReturnValue  *OtpRequestResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SendCustomEmailVerificationAPIService.PostMethodName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SendCustomEmailVerificationAPIService.RequestOtp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

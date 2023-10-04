@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postMethodName**](SendCustomEmailVerificationApi.md#postmethodname) | **POST** /api/v1/auth/public/request-otp | 
+[**requestOtp**](SendCustomEmailVerificationApi.md#requestotp) | **POST** /api/v1/auth/public/request-otp | 
 
 
-# **postMethodName**
-> OtpRequestResponse postMethodName(otpRequest)
+# **requestOtp**
+> OtpRequestResponse requestOtp(otpRequest)
 
 
 
@@ -25,10 +25,10 @@ final api_instance = SendCustomEmailVerificationApi();
 final otpRequest = OtpRequest(); // OtpRequest | 
 
 try {
-    final result = api_instance.postMethodName(otpRequest);
+    final result = api_instance.requestOtp(otpRequest);
     print(result);
 } catch (e) {
-    print('Exception when calling SendCustomEmailVerificationApi->postMethodName: $e\n');
+    print('Exception when calling SendCustomEmailVerificationApi->requestOtp: $e\n');
 }
 ```
 

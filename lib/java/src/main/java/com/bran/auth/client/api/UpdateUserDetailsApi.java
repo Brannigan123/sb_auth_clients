@@ -87,7 +87,7 @@ public class UpdateUserDetailsApi {
         final String[] localVarContentTypes = {  };
         final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "Authentication" };
 
         ParameterizedTypeReference<ModelApiResponse> localReturnType = new ParameterizedTypeReference<ModelApiResponse>() {};
         return apiClient.invokeAPI("/api/v1/auth/authenticated/update-user-details", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);

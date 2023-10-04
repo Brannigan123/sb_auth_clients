@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_method_name**](SendCustomEmailVerificationApi.md#post_method_name) | **POST** /api/v1/auth/public/request-otp | 
+[**request_otp**](SendCustomEmailVerificationApi.md#request_otp) | **POST** /api/v1/auth/public/request-otp | 
 
 
 
-## post_method_name
+## request_otp
 
-> crate::models::OtpRequestResponse post_method_name(otp_request)
+> crate::models::OtpRequestResponse request_otp(otp_request)
 
 
 ### Parameters

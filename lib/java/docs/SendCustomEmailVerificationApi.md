@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**postMethodName**](SendCustomEmailVerificationApi.md#postMethodName) | **POST** /api/v1/auth/public/request-otp |  |
+| [**requestOtp**](SendCustomEmailVerificationApi.md#requestOtp) | **POST** /api/v1/auth/public/request-otp |  |
 
 
 
-## postMethodName
+## requestOtp
 
-> OtpRequestResponse postMethodName(otpRequest)
+> OtpRequestResponse requestOtp(otpRequest)
 
 
 
@@ -32,10 +32,10 @@ public class Example {
         SendCustomEmailVerificationApi apiInstance = new SendCustomEmailVerificationApi(defaultClient);
         OtpRequest otpRequest = new OtpRequest(); // OtpRequest | 
         try {
-            OtpRequestResponse result = apiInstance.postMethodName(otpRequest);
+            OtpRequestResponse result = apiInstance.requestOtp(otpRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling SendCustomEmailVerificationApi#postMethodName");
+            System.err.println("Exception when calling SendCustomEmailVerificationApi#requestOtp");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

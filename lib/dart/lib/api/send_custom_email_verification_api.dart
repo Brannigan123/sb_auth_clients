@@ -20,7 +20,7 @@ class SendCustomEmailVerificationApi {
   /// Parameters:
   ///
   /// * [OtpRequest] otpRequest (required):
-  Future<Response> postMethodNameWithHttpInfo(OtpRequest otpRequest,) async {
+  Future<Response> requestOtpWithHttpInfo(OtpRequest otpRequest,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/auth/public/request-otp';
 
@@ -48,8 +48,8 @@ class SendCustomEmailVerificationApi {
   /// Parameters:
   ///
   /// * [OtpRequest] otpRequest (required):
-  Future<OtpRequestResponse?> postMethodName(OtpRequest otpRequest,) async {
-    final response = await postMethodNameWithHttpInfo(otpRequest,);
+  Future<OtpRequestResponse?> requestOtp(OtpRequest otpRequest,) async {
+    final response = await requestOtpWithHttpInfo(otpRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

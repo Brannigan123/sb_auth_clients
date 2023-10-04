@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiSendVerificationEmailReque
 
 ### Authorization
 
-No authorization required
+[Authentication](../README.md#Authentication)
 
 ### HTTP request headers
 

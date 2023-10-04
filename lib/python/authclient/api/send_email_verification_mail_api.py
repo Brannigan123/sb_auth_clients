@@ -158,7 +158,7 @@ class SendEmailVerificationMailApi:
             ['*/*'])  # noqa: E501
 
         # authentication setting
-        _auth_settings = []  # noqa: E501
+        _auth_settings = ['Authentication']  # noqa: E501
 
         _response_types_map = {
             '200': "ApiResponse",

@@ -38,11 +38,11 @@ class TestModelDate(unittest.TestCase):
             return ModelDate(
                 seconds = 56,
                 time = 56,
-                year = 56,
                 var_date = 56,
                 month = 56,
                 hours = 56,
                 minutes = 56,
+                year = 56,
                 day = 56,
                 timezone_offset = 56
             )

@@ -54,8 +54,8 @@ public class SendCustomEmailVerificationApi {
      * @return OtpRequestResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public OtpRequestResponse postMethodName(OtpRequest otpRequest) throws RestClientException {
-        return postMethodNameWithHttpInfo(otpRequest).getBody();
+    public OtpRequestResponse requestOtp(OtpRequest otpRequest) throws RestClientException {
+        return requestOtpWithHttpInfo(otpRequest).getBody();
     }
 
     /**
@@ -66,12 +66,12 @@ public class SendCustomEmailVerificationApi {
      * @return ResponseEntity&lt;OtpRequestResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<OtpRequestResponse> postMethodNameWithHttpInfo(OtpRequest otpRequest) throws RestClientException {
+    public ResponseEntity<OtpRequestResponse> requestOtpWithHttpInfo(OtpRequest otpRequest) throws RestClientException {
         Object localVarPostBody = otpRequest;
         
         // verify the required parameter 'otpRequest' is set
         if (otpRequest == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'otpRequest' when calling postMethodName");
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'otpRequest' when calling requestOtp");
         }
         
 

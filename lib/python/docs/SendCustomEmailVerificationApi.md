@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_method_name**](SendCustomEmailVerificationApi.md#post_method_name) | **POST** /api/v1/auth/public/request-otp | 
+[**request_otp**](SendCustomEmailVerificationApi.md#request_otp) | **POST** /api/v1/auth/public/request-otp | 
 
 
-# **post_method_name**
-> OtpRequestResponse post_method_name(otp_request)
+# **request_otp**
+> OtpRequestResponse request_otp(otp_request)
 
 
 
@@ -37,11 +37,11 @@ async with authclient.ApiClient(configuration) as api_client:
     otp_request = authclient.OtpRequest() # OtpRequest | 
 
     try:
-        api_response = await api_instance.post_method_name(otp_request)
-        print("The response of SendCustomEmailVerificationApi->post_method_name:\n")
+        api_response = await api_instance.request_otp(otp_request)
+        print("The response of SendCustomEmailVerificationApi->request_otp:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SendCustomEmailVerificationApi->post_method_name: %s\n" % e)
+        print("Exception when calling SendCustomEmailVerificationApi->request_otp: %s\n" % e)
 ```
 
 

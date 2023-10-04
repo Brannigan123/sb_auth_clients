@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-No authorization required
+[Authentication](../README.md#Authentication)
 
 ### HTTP request headers
 

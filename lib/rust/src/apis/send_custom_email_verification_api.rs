@@ -15,23 +15,23 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed successes of method [`post_method_name`]
+/// struct for typed successes of method [`request_otp`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum PostMethodNameSuccess {
+pub enum RequestOtpSuccess {
     Status200(crate::models::OtpRequestResponse),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`post_method_name`]
+/// struct for typed errors of method [`request_otp`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum PostMethodNameError {
+pub enum RequestOtpError {
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn post_method_name(configuration: &configuration::Configuration, otp_request: crate::models::OtpRequest) -> Result<ResponseContent<PostMethodNameSuccess>, Error<PostMethodNameError>> {
+pub async fn request_otp(configuration: &configuration::Configuration, otp_request: crate::models::OtpRequest) -> Result<ResponseContent<RequestOtpSuccess>, Error<RequestOtpError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -51,11 +51,11 @@ pub async fn post_method_name(configuration: &configuration::Configuration, otp_
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        let local_var_entity: Option<PostMethodNameSuccess> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<RequestOtpSuccess> = serde_json::from_str(&local_var_content).ok();
         let local_var_result = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Ok(local_var_result)
     } else {
-        let local_var_entity: Option<PostMethodNameError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<RequestOtpError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

@@ -37,9 +37,9 @@ export const SendCustomEmailVerificationApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postMethodName: async (otpRequest: OtpRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        requestOtp: async (otpRequest: OtpRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'otpRequest' is not null or undefined
-            assertParamExists('postMethodName', 'otpRequest', otpRequest)
+            assertParamExists('requestOtp', 'otpRequest', otpRequest)
             const localVarPath = `/api/v1/auth/public/request-otp`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -82,8 +82,8 @@ export const SendCustomEmailVerificationApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async postMethodName(otpRequest: OtpRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtpRequestResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.postMethodName(otpRequest, options);
+        async requestOtp(otpRequest: OtpRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtpRequestResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.requestOtp(otpRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -102,8 +102,8 @@ export const SendCustomEmailVerificationApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        postMethodName(otpRequest: OtpRequest, options?: any): AxiosPromise<OtpRequestResponse> {
-            return localVarFp.postMethodName(otpRequest, options).then((request) => request(axios, basePath));
+        requestOtp(otpRequest: OtpRequest, options?: any): AxiosPromise<OtpRequestResponse> {
+            return localVarFp.requestOtp(otpRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -122,8 +122,8 @@ export class SendCustomEmailVerificationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SendCustomEmailVerificationApi
      */
-    public postMethodName(otpRequest: OtpRequest, options?: AxiosRequestConfig) {
-        return SendCustomEmailVerificationApiFp(this.configuration).postMethodName(otpRequest, options).then((request) => request(this.axios, this.basePath));
+    public requestOtp(otpRequest: OtpRequest, options?: AxiosRequestConfig) {
+        return SendCustomEmailVerificationApiFp(this.configuration).requestOtp(otpRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

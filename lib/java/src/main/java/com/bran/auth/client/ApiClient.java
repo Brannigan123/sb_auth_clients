@@ -54,6 +54,7 @@ import java.util.TimeZone;
 import java.util.function.Supplier;
 
 import com.bran.auth.client.auth.Authentication;
+import com.bran.auth.client.auth.HttpBearerAuth;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiClient {
@@ -107,6 +108,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
+        authentications.put("Authentication", new HttpBearerAuth("bearer"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -148,6 +150,30 @@ public class ApiClient {
      */
     public Authentication getAuthentication(String authName) {
         return authentications.get(authName);
+    }
+
+    /**
+     * Helper method to set token for HTTP bearer authentication.
+     *
+     * @param bearerToken the token
+     */
+    public void setBearerToken(String bearerToken) {
+        setBearerToken(() -> bearerToken);
+    }
+
+    /**
+     * Helper method to set the token supplier for HTTP bearer authentication.
+     *
+     * @param tokenSupplier the token supplier function
+     */
+    public void setBearerToken(Supplier<String> tokenSupplier) {
+        for (Authentication auth : authentications.values()) {
+            if (auth instanceof HttpBearerAuth) {
+                ((HttpBearerAuth) auth).setBearerToken(tokenSupplier);
+                return;
+            }
+        }
+        throw new RuntimeException("No Bearer authentication configured!");
     }
 
 
