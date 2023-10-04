@@ -1,0 +1,652 @@
+openapi: 3.0.1
+info:
+  description: Bran's Auth API
+  title: API for AuthApplication
+  version: "1.0"
+servers:
+- url: /
+tags:
+- description: Sign out a user
+  name: Signout
+- description: Send an email verification mail with OTP
+  name: Send email verification mail
+- description: "Update user details, requires OTP verification"
+  name: Update user details
+- description: Authenticate a user
+  name: Authenticate
+- description: Refresh a user's jwt token
+  name: Refresh-token
+- description: Register a new user
+  name: Register
+- description: Send an email verification mail with OTP with custom message
+  name: Send custom email verification
+- description: Validate an email verification OTP
+  name: Validate email verification
+paths:
+  /api/v1/auth/authenticated/logout:
+    post:
+      operationId: signout
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/SignoutRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Default response
+      tags:
+      - Signout
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/authenticated/send-email-verification-mail:
+    post:
+      operationId: sendVerificationEmail
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Default response
+      tags:
+      - Send email verification mail
+      x-accepts: '*/*'
+  /api/v1/auth/authenticated/update-user-details:
+    post:
+      operationId: updateUserDetails
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/UserDetailsUpdateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Default response
+      tags:
+      - Update user details
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/authenticate:
+    post:
+      operationId: authenticate
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/SigninRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SigninResponse'
+          description: Default response
+      tags:
+      - Authenticate
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/refresh-token:
+    post:
+      operationId: refeshToken
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/TokenRefreshResponse'
+          description: Default response
+      tags:
+      - Refresh-token
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/register:
+    post:
+      operationId: register
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/SignupRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/SignupResponse'
+          description: Default response
+      tags:
+      - Register
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/request-otp:
+    post:
+      operationId: postMethodName
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/OtpRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OtpRequestResponse'
+          description: Default response
+      tags:
+      - Send custom email verification
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/validate-email-verification:
+    post:
+      operationId: validateEmailVerification
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/EmailConfirmationOtpSubmitRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Default response
+      tags:
+      - Validate email verification
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+components:
+  responses:
+    "200":
+      content:
+        '*/*':
+          schema:
+            $ref: '#/components/schemas/ApiResponse'
+      description: Default response
+  schemas:
+    array_string:
+      items:
+        type: string
+      type: array
+    ApiResponse:
+      example:
+        messages:
+        - messages
+        - messages
+        errored: true
+      properties:
+        errored:
+          type: boolean
+        messages:
+          items:
+            type: string
+          type: array
+      type: object
+    SignoutRequest:
+      example:
+        token: token
+      properties:
+        token:
+          type: string
+      type: object
+    TokenRefreshRequest:
+      example:
+        token: token
+      properties:
+        token:
+          type: string
+      type: object
+    UserDetailsUpdateRequest:
+      example:
+        password: password
+        otpId: otpId
+        displayName: displayName
+        otpCode: otpCode
+        email: email
+      properties:
+        otpId:
+          type: string
+        otpCode:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      type: object
+    Role:
+      example:
+        permissions:
+        - roles:
+          - null
+          - null
+          authority: authority
+          name: name
+          id: id
+        - roles:
+          - null
+          - null
+          authority: authority
+          name: name
+          id: id
+        authority: authority
+        name: name
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        permissions:
+          items:
+            $ref: '#/components/schemas/Permission'
+          type: array
+        authority:
+          type: string
+      type: object
+    array_Role:
+      items:
+        $ref: '#/components/schemas/Role'
+      type: array
+    Permission:
+      example:
+        roles:
+        - null
+        - null
+        authority: authority
+        name: name
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        roles:
+          items:
+            $ref: '#/components/schemas/Role'
+          type: array
+        authority:
+          type: string
+      type: object
+    array_Permission:
+      items:
+        $ref: '#/components/schemas/Permission'
+      type: array
+    SigninResponse:
+      example:
+        emailVerified: true
+        lockedAccount: true
+        displayName: displayName
+        roles:
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        messages:
+        - messages
+        - messages
+        deletedAccount: true
+        email: email
+        errored: true
+        token: token
+        refreshToken: refreshToken
+        username: username
+      properties:
+        errored:
+          type: boolean
+        messages:
+          items:
+            type: string
+          type: array
+        token:
+          type: string
+        refreshToken:
+          type: string
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        roles:
+          items:
+            $ref: '#/components/schemas/Role'
+          type: array
+        emailVerified:
+          type: boolean
+        lockedAccount:
+          type: boolean
+        deletedAccount:
+          type: boolean
+      type: object
+    TokenRefreshResponse:
+      example:
+        emailVerified: true
+        lockedAccount: true
+        displayName: displayName
+        roles:
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        messages:
+        - messages
+        - messages
+        deletedAccount: true
+        email: email
+        errored: true
+        token: token
+        refreshToken: refreshToken
+        username: username
+      properties:
+        errored:
+          type: boolean
+        messages:
+          items:
+            type: string
+          type: array
+        token:
+          type: string
+        refreshToken:
+          type: string
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        roles:
+          items:
+            $ref: '#/components/schemas/Role'
+          type: array
+        emailVerified:
+          type: boolean
+        lockedAccount:
+          type: boolean
+        deletedAccount:
+          type: boolean
+      type: object
+    SignupResponse:
+      example:
+        emailVerified: true
+        lockedAccount: true
+        displayName: displayName
+        roles:
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        - permissions:
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          - roles:
+            - null
+            - null
+            authority: authority
+            name: name
+            id: id
+          authority: authority
+          name: name
+          id: id
+        messages:
+        - messages
+        - messages
+        deletedAccount: true
+        email: email
+        errored: true
+        token: token
+        refreshToken: refreshToken
+        username: username
+      properties:
+        errored:
+          type: boolean
+        messages:
+          items:
+            type: string
+          type: array
+        token:
+          type: string
+        refreshToken:
+          type: string
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        roles:
+          items:
+            $ref: '#/components/schemas/Role'
+          type: array
+        emailVerified:
+          type: boolean
+        lockedAccount:
+          type: boolean
+        deletedAccount:
+          type: boolean
+      type: object
+    SigninRequest:
+      example:
+        emailOrUsername: emailOrUsername
+        password: password
+      properties:
+        emailOrUsername:
+          type: string
+        password:
+          type: string
+      type: object
+    SignupRequest:
+      example:
+        password: password
+        displayName: displayName
+        email: email
+        username: username
+      properties:
+        username:
+          type: string
+        displayName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      type: object
+    deprecated_integer_int32:
+      deprecated: true
+      format: int32
+      type: integer
+    Date:
+      example:
+        date: 5
+        seconds: 0
+        hours: 2
+        month: 5
+        year: 1
+        timezoneOffset: 3
+        minutes: 7
+        time: 6
+        day: 9
+      properties:
+        seconds:
+          deprecated: true
+          format: int32
+          type: integer
+        time:
+          format: int64
+          type: integer
+        year:
+          deprecated: true
+          format: int32
+          type: integer
+        date:
+          deprecated: true
+          format: int32
+          type: integer
+        month:
+          deprecated: true
+          format: int32
+          type: integer
+        hours:
+          deprecated: true
+          format: int32
+          type: integer
+        minutes:
+          deprecated: true
+          format: int32
+          type: integer
+        day:
+          deprecated: true
+          format: int32
+          type: integer
+        timezoneOffset:
+          deprecated: true
+          format: int32
+          type: integer
+      type: object
+    OtpRequestResponse:
+      example:
+        expiryDate:
+          date: 5
+          seconds: 0
+          hours: 2
+          month: 5
+          year: 1
+          timezoneOffset: 3
+          minutes: 7
+          time: 6
+          day: 9
+        otpId: otpId
+        messages:
+        - messages
+        - messages
+        email: email
+        errored: true
+      properties:
+        errored:
+          type: boolean
+        messages:
+          items:
+            type: string
+          type: array
+        otpId:
+          type: string
+        email:
+          type: string
+        expiryDate:
+          $ref: '#/components/schemas/Date'
+      type: object
+    OtpRequest:
+      example:
+        emailOrUsername: emailOrUsername
+        message: message
+      properties:
+        emailOrUsername:
+          type: string
+        message:
+          type: string
+      type: object
+    EmailConfirmationOtpSubmitRequest:
+      example:
+        code: code
+        otpId: otpId
+      properties:
+        otpId:
+          type: string
+        code:
+          type: string
+      type: object
+
