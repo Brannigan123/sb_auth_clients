@@ -19,32 +19,32 @@ import (
 )
 
 
-// ValidateEmailVerificationAPIService ValidateEmailVerificationAPI service
-type ValidateEmailVerificationAPIService service
+// ResetUserPasswordAPIService ResetUserPasswordAPI service
+type ResetUserPasswordAPIService service
 
-type ApiValidateEmailVerificationRequest struct {
+type ApiResetUserPasswordRequest struct {
 	ctx context.Context
-	ApiService *ValidateEmailVerificationAPIService
-	emailConfirmationOtpSubmitRequest *EmailConfirmationOtpSubmitRequest
+	ApiService *ResetUserPasswordAPIService
+	resetUserPasswordRequest *ResetUserPasswordRequest
 }
 
-func (r ApiValidateEmailVerificationRequest) EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest EmailConfirmationOtpSubmitRequest) ApiValidateEmailVerificationRequest {
-	r.emailConfirmationOtpSubmitRequest = &emailConfirmationOtpSubmitRequest
+func (r ApiResetUserPasswordRequest) ResetUserPasswordRequest(resetUserPasswordRequest ResetUserPasswordRequest) ApiResetUserPasswordRequest {
+	r.resetUserPasswordRequest = &resetUserPasswordRequest
 	return r
 }
 
-func (r ApiValidateEmailVerificationRequest) Execute() (*AuthResponse, *http.Response, error) {
-	return r.ApiService.ValidateEmailVerificationExecute(r)
+func (r ApiResetUserPasswordRequest) Execute() (*AuthResponse, *http.Response, error) {
+	return r.ApiService.ResetUserPasswordExecute(r)
 }
 
 /*
-ValidateEmailVerification Method for ValidateEmailVerification
+ResetUserPassword Method for ResetUserPassword
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiValidateEmailVerificationRequest
+ @return ApiResetUserPasswordRequest
 */
-func (a *ValidateEmailVerificationAPIService) ValidateEmailVerification(ctx context.Context) ApiValidateEmailVerificationRequest {
-	return ApiValidateEmailVerificationRequest{
+func (a *ResetUserPasswordAPIService) ResetUserPassword(ctx context.Context) ApiResetUserPasswordRequest {
+	return ApiResetUserPasswordRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *ValidateEmailVerificationAPIService) ValidateEmailVerification(ctx cont
 
 // Execute executes the request
 //  @return AuthResponse
-func (a *ValidateEmailVerificationAPIService) ValidateEmailVerificationExecute(r ApiValidateEmailVerificationRequest) (*AuthResponse, *http.Response, error) {
+func (a *ResetUserPasswordAPIService) ResetUserPasswordExecute(r ApiResetUserPasswordRequest) (*AuthResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,18 +60,18 @@ func (a *ValidateEmailVerificationAPIService) ValidateEmailVerificationExecute(r
 		localVarReturnValue  *AuthResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ValidateEmailVerificationAPIService.ValidateEmailVerification")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResetUserPasswordAPIService.ResetUserPassword")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/auth/public/validate-email-verification"
+	localVarPath := localBasePath + "/api/v1/auth/public/reset-password"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.emailConfirmationOtpSubmitRequest == nil {
-		return localVarReturnValue, nil, reportError("emailConfirmationOtpSubmitRequest is required and must be specified")
+	if r.resetUserPasswordRequest == nil {
+		return localVarReturnValue, nil, reportError("resetUserPasswordRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -92,7 +92,7 @@ func (a *ValidateEmailVerificationAPIService) ValidateEmailVerificationExecute(r
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.emailConfirmationOtpSubmitRequest
+	localVarPostBody = r.resetUserPasswordRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

@@ -9,11 +9,12 @@ authclient/api/__init__.py
 authclient/api/authenticate_api.py
 authclient/api/refresh_token_api.py
 authclient/api/register_api.py
+authclient/api/reset_user_password_api.py
 authclient/api/send_custom_email_verification_api.py
 authclient/api/send_email_verification_mail_api.py
 authclient/api/signout_api.py
 authclient/api/update_user_details_api.py
-authclient/api/validate_email_verification_api.py
+authclient/api/validate_email_verification_with_otp_api.py
 authclient/api_client.py
 authclient/api_response.py
 authclient/configuration.py
@@ -25,6 +26,7 @@ authclient/models/model_date.py
 authclient/models/otp_request.py
 authclient/models/otp_request_response.py
 authclient/models/permission.py
+authclient/models/reset_user_password_request.py
 authclient/models/response_user_details.py
 authclient/models/role.py
 authclient/models/signin_request.py
@@ -43,6 +45,8 @@ docs/OtpRequestResponse.md
 docs/Permission.md
 docs/RefreshTokenApi.md
 docs/RegisterApi.md
+docs/ResetUserPasswordApi.md
+docs/ResetUserPasswordRequest.md
 docs/ResponseUserDetails.md
 docs/Role.md
 docs/SendCustomEmailVerificationApi.md
@@ -54,7 +58,7 @@ docs/SignupRequest.md
 docs/TokenRefreshRequest.md
 docs/UpdateUserDetailsApi.md
 docs/UserDetailsUpdateRequest.md
-docs/ValidateEmailVerificationApi.md
+docs/ValidateEmailVerificationWithOtpApi.md
 git_push.sh
 pyproject.toml
 requirements.txt
@@ -71,6 +75,8 @@ test/test_otp_request_response.py
 test/test_permission.py
 test/test_refresh_token_api.py
 test/test_register_api.py
+test/test_reset_user_password_api.py
+test/test_reset_user_password_request.py
 test/test_response_user_details.py
 test/test_role.py
 test/test_send_custom_email_verification_api.py
@@ -82,5 +88,5 @@ test/test_signup_request.py
 test/test_token_refresh_request.py
 test/test_update_user_details_api.py
 test/test_user_details_update_request.py
-test/test_validate_email_verification_api.py
+test/test_validate_email_verification_with_otp_api.py
 tox.ini

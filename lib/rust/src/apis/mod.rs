@@ -93,10 +93,11 @@ pub fn parse_deep_object(prefix: &str, value: &serde_json::Value) -> Vec<(String
 pub mod authenticate_api;
 pub mod refresh_token_api;
 pub mod register_api;
+pub mod reset_user_password_api;
 pub mod send_custom_email_verification_api;
 pub mod send_email_verification_mail_api;
 pub mod signout_api;
 pub mod update_user_details_api;
-pub mod validate_email_verification_api;
+pub mod validate_email_verification_with_otp_api;
 
 pub mod configuration;

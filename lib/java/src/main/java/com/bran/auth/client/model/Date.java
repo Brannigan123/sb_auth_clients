@@ -29,12 +29,12 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonPropertyOrder({
   Date.JSON_PROPERTY_TIME,
+  Date.JSON_PROPERTY_YEAR,
   Date.JSON_PROPERTY_SECONDS,
-  Date.JSON_PROPERTY_DATE,
   Date.JSON_PROPERTY_MONTH,
+  Date.JSON_PROPERTY_DATE,
   Date.JSON_PROPERTY_HOURS,
   Date.JSON_PROPERTY_MINUTES,
-  Date.JSON_PROPERTY_YEAR,
   Date.JSON_PROPERTY_DAY,
   Date.JSON_PROPERTY_TIMEZONE_OFFSET
 })
@@ -43,23 +43,23 @@ public class Date {
   public static final String JSON_PROPERTY_TIME = "time";
   private Long time;
 
+  public static final String JSON_PROPERTY_YEAR = "year";
+  private Integer year;
+
   public static final String JSON_PROPERTY_SECONDS = "seconds";
   private Integer seconds;
 
-  public static final String JSON_PROPERTY_DATE = "date";
-  private Integer date;
-
   public static final String JSON_PROPERTY_MONTH = "month";
   private Integer month;
+
+  public static final String JSON_PROPERTY_DATE = "date";
+  private Integer date;
 
   public static final String JSON_PROPERTY_HOURS = "hours";
   private Integer hours;
 
   public static final String JSON_PROPERTY_MINUTES = "minutes";
   private Integer minutes;
-
-  public static final String JSON_PROPERTY_YEAR = "year";
-  private Integer year;
 
   public static final String JSON_PROPERTY_DAY = "day";
   private Integer day;
@@ -97,6 +97,35 @@ public class Date {
   }
 
 
+  public Date year(Integer year) {
+    
+    this.year = year;
+    return this;
+  }
+
+   /**
+   * Get year
+   * @return year
+   * @deprecated
+  **/
+  @Deprecated
+  @javax.annotation.Nullable
+  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
+  @JsonProperty(JSON_PROPERTY_YEAR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getYear() {
+    return year;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_YEAR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setYear(Integer year) {
+    this.year = year;
+  }
+
+
   public Date seconds(Integer seconds) {
     
     this.seconds = seconds;
@@ -126,35 +155,6 @@ public class Date {
   }
 
 
-  public Date date(Integer date) {
-    
-    this.date = date;
-    return this;
-  }
-
-   /**
-   * Get date
-   * @return date
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
-  @JsonProperty(JSON_PROPERTY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getDate() {
-    return date;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDate(Integer date) {
-    this.date = date;
-  }
-
-
   public Date month(Integer month) {
     
     this.month = month;
@@ -181,6 +181,35 @@ public class Date {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMonth(Integer month) {
     this.month = month;
+  }
+
+
+  public Date date(Integer date) {
+    
+    this.date = date;
+    return this;
+  }
+
+   /**
+   * Get date
+   * @return date
+   * @deprecated
+  **/
+  @Deprecated
+  @javax.annotation.Nullable
+  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
+  @JsonProperty(JSON_PROPERTY_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getDate() {
+    return date;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDate(Integer date) {
+    this.date = date;
   }
 
 
@@ -239,35 +268,6 @@ public class Date {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinutes(Integer minutes) {
     this.minutes = minutes;
-  }
-
-
-  public Date year(Integer year) {
-    
-    this.year = year;
-    return this;
-  }
-
-   /**
-   * Get year
-   * @return year
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  @Schema(requiredMode = Schema.RequiredMode.NOT_REQUIRED, description = "")
-  @JsonProperty(JSON_PROPERTY_YEAR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getYear() {
-    return year;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_YEAR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setYear(Integer year) {
-    this.year = year;
   }
 
 
@@ -338,19 +338,19 @@ public class Date {
     }
     Date date = (Date) o;
     return Objects.equals(this.time, date.time) &&
+        Objects.equals(this.year, date.year) &&
         Objects.equals(this.seconds, date.seconds) &&
-        Objects.equals(this.date, date.date) &&
         Objects.equals(this.month, date.month) &&
+        Objects.equals(this.date, date.date) &&
         Objects.equals(this.hours, date.hours) &&
         Objects.equals(this.minutes, date.minutes) &&
-        Objects.equals(this.year, date.year) &&
         Objects.equals(this.day, date.day) &&
         Objects.equals(this.timezoneOffset, date.timezoneOffset);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(time, seconds, date, month, hours, minutes, year, day, timezoneOffset);
+    return Objects.hash(time, year, seconds, month, date, hours, minutes, day, timezoneOffset);
   }
 
   @Override
@@ -358,12 +358,12 @@ public class Date {
     StringBuilder sb = new StringBuilder();
     sb.append("class Date {\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("    seconds: ").append(toIndentedString(seconds)).append("\n");
-    sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    month: ").append(toIndentedString(month)).append("\n");
+    sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    hours: ").append(toIndentedString(hours)).append("\n");
     sb.append("    minutes: ").append(toIndentedString(minutes)).append("\n");
-    sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("    day: ").append(toIndentedString(day)).append("\n");
     sb.append("    timezoneOffset: ").append(toIndentedString(timezoneOffset)).append("\n");
     sb.append("}");

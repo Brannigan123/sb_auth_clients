@@ -26,10 +26,10 @@ import { AuthResponse } from '../../../../../com/bran/auth/client/model';
 // @ts-ignore
 import { EmailConfirmationOtpSubmitRequest } from '../../../../../com/bran/auth/client/model';
 /**
- * ValidateEmailVerificationApi - axios parameter creator
+ * ValidateEmailVerificationWithOtpApi - axios parameter creator
  * @export
  */
-export const ValidateEmailVerificationApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ValidateEmailVerificationWithOtpApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -37,10 +37,10 @@ export const ValidateEmailVerificationApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateEmailVerification: async (emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        valilidateEmailVerificationOtp: async (emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'emailConfirmationOtpSubmitRequest' is not null or undefined
-            assertParamExists('validateEmailVerification', 'emailConfirmationOtpSubmitRequest', emailConfirmationOtpSubmitRequest)
-            const localVarPath = `/api/v1/auth/public/validate-email-verification`;
+            assertParamExists('valilidateEmailVerificationOtp', 'emailConfirmationOtpSubmitRequest', emailConfirmationOtpSubmitRequest)
+            const localVarPath = `/api/v1/auth/public/validate-email-verification-otp`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -70,11 +70,11 @@ export const ValidateEmailVerificationApiAxiosParamCreator = function (configura
 };
 
 /**
- * ValidateEmailVerificationApi - functional programming interface
+ * ValidateEmailVerificationWithOtpApi - functional programming interface
  * @export
  */
-export const ValidateEmailVerificationApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ValidateEmailVerificationApiAxiosParamCreator(configuration)
+export const ValidateEmailVerificationWithOtpApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ValidateEmailVerificationWithOtpApiAxiosParamCreator(configuration)
     return {
         /**
          * 
@@ -82,19 +82,19 @@ export const ValidateEmailVerificationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.validateEmailVerification(emailConfirmationOtpSubmitRequest, options);
+        async valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * ValidateEmailVerificationApi - factory interface
+ * ValidateEmailVerificationWithOtpApi - factory interface
  * @export
  */
-export const ValidateEmailVerificationApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ValidateEmailVerificationApiFp(configuration)
+export const ValidateEmailVerificationWithOtpApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ValidateEmailVerificationWithOtpApiFp(configuration)
     return {
         /**
          * 
@@ -102,28 +102,28 @@ export const ValidateEmailVerificationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: any): AxiosPromise<AuthResponse> {
-            return localVarFp.validateEmailVerification(emailConfirmationOtpSubmitRequest, options).then((request) => request(axios, basePath));
+        valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: any): AxiosPromise<AuthResponse> {
+            return localVarFp.valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * ValidateEmailVerificationApi - object-oriented interface
+ * ValidateEmailVerificationWithOtpApi - object-oriented interface
  * @export
- * @class ValidateEmailVerificationApi
+ * @class ValidateEmailVerificationWithOtpApi
  * @extends {BaseAPI}
  */
-export class ValidateEmailVerificationApi extends BaseAPI {
+export class ValidateEmailVerificationWithOtpApi extends BaseAPI {
     /**
      * 
      * @param {EmailConfirmationOtpSubmitRequest} emailConfirmationOtpSubmitRequest 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ValidateEmailVerificationApi
+     * @memberof ValidateEmailVerificationWithOtpApi
      */
-    public validateEmailVerification(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig) {
-        return ValidateEmailVerificationApiFp(this.configuration).validateEmailVerification(emailConfirmationOtpSubmitRequest, options).then((request) => request(this.axios, this.basePath));
+    public valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest: EmailConfirmationOtpSubmitRequest, options?: AxiosRequestConfig) {
+        return ValidateEmailVerificationWithOtpApiFp(this.configuration).valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

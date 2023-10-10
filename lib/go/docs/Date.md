@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Time** | Pointer to **int64** |  | [optional] 
+**Year** | Pointer to **int32** |  | [optional] 
 **Seconds** | Pointer to **int32** |  | [optional] 
-**Date** | Pointer to **int32** |  | [optional] 
 **Month** | Pointer to **int32** |  | [optional] 
+**Date** | Pointer to **int32** |  | [optional] 
 **Hours** | Pointer to **int32** |  | [optional] 
 **Minutes** | Pointer to **int32** |  | [optional] 
-**Year** | Pointer to **int32** |  | [optional] 
 **Day** | Pointer to **int32** |  | [optional] 
 **TimezoneOffset** | Pointer to **int32** |  | [optional] 
 
@@ -58,6 +58,31 @@ SetTime sets Time field to given value.
 
 HasTime returns a boolean if a field has been set.
 
+### GetYear
+
+`func (o *Date) GetYear() int32`
+
+GetYear returns the Year field if non-nil, zero value otherwise.
+
+### GetYearOk
+
+`func (o *Date) GetYearOk() (*int32, bool)`
+
+GetYearOk returns a tuple with the Year field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetYear
+
+`func (o *Date) SetYear(v int32)`
+
+SetYear sets Year field to given value.
+
+### HasYear
+
+`func (o *Date) HasYear() bool`
+
+HasYear returns a boolean if a field has been set.
+
 ### GetSeconds
 
 `func (o *Date) GetSeconds() int32`
@@ -83,31 +108,6 @@ SetSeconds sets Seconds field to given value.
 
 HasSeconds returns a boolean if a field has been set.
 
-### GetDate
-
-`func (o *Date) GetDate() int32`
-
-GetDate returns the Date field if non-nil, zero value otherwise.
-
-### GetDateOk
-
-`func (o *Date) GetDateOk() (*int32, bool)`
-
-GetDateOk returns a tuple with the Date field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDate
-
-`func (o *Date) SetDate(v int32)`
-
-SetDate sets Date field to given value.
-
-### HasDate
-
-`func (o *Date) HasDate() bool`
-
-HasDate returns a boolean if a field has been set.
-
 ### GetMonth
 
 `func (o *Date) GetMonth() int32`
@@ -132,6 +132,31 @@ SetMonth sets Month field to given value.
 `func (o *Date) HasMonth() bool`
 
 HasMonth returns a boolean if a field has been set.
+
+### GetDate
+
+`func (o *Date) GetDate() int32`
+
+GetDate returns the Date field if non-nil, zero value otherwise.
+
+### GetDateOk
+
+`func (o *Date) GetDateOk() (*int32, bool)`
+
+GetDateOk returns a tuple with the Date field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDate
+
+`func (o *Date) SetDate(v int32)`
+
+SetDate sets Date field to given value.
+
+### HasDate
+
+`func (o *Date) HasDate() bool`
+
+HasDate returns a boolean if a field has been set.
 
 ### GetHours
 
@@ -182,31 +207,6 @@ SetMinutes sets Minutes field to given value.
 `func (o *Date) HasMinutes() bool`
 
 HasMinutes returns a boolean if a field has been set.
-
-### GetYear
-
-`func (o *Date) GetYear() int32`
-
-GetYear returns the Year field if non-nil, zero value otherwise.
-
-### GetYearOk
-
-`func (o *Date) GetYearOk() (*int32, bool)`
-
-GetYearOk returns a tuple with the Year field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetYear
-
-`func (o *Date) SetYear(v int32)`
-
-SetYear sets Year field to given value.
-
-### HasYear
-
-`func (o *Date) HasYear() bool`
-
-HasYear returns a boolean if a field has been set.
 
 ### GetDay
 

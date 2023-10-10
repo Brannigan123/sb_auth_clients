@@ -1,4 +1,4 @@
-# authclient.api.ValidateEmailVerificationApi
+# authclient.api.ValidateEmailVerificationWithOtpApi
 
 ## Load the API package
 ```dart
@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validateEmailVerification**](ValidateEmailVerificationApi.md#validateemailverification) | **POST** /api/v1/auth/public/validate-email-verification | 
+[**valilidateEmailVerificationOtp**](ValidateEmailVerificationWithOtpApi.md#valilidateemailverificationotp) | **POST** /api/v1/auth/public/validate-email-verification-otp | 
 
 
-# **validateEmailVerification**
-> AuthResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
+# **valilidateEmailVerificationOtp**
+> AuthResponse valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest)
 
 
 
@@ -21,14 +21,14 @@ Method | HTTP request | Description
 ```dart
 import 'package:authclient/api.dart';
 
-final api_instance = ValidateEmailVerificationApi();
+final api_instance = ValidateEmailVerificationWithOtpApi();
 final emailConfirmationOtpSubmitRequest = EmailConfirmationOtpSubmitRequest(); // EmailConfirmationOtpSubmitRequest | 
 
 try {
-    final result = api_instance.validateEmailVerification(emailConfirmationOtpSubmitRequest);
+    final result = api_instance.valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest);
     print(result);
 } catch (e) {
-    print('Exception when calling ValidateEmailVerificationApi->validateEmailVerification: $e\n');
+    print('Exception when calling ValidateEmailVerificationWithOtpApi->valilidateEmailVerificationOtp: $e\n');
 }
 ```
 

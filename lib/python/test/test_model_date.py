@@ -37,12 +37,12 @@ class TestModelDate(unittest.TestCase):
         if include_optional:
             return ModelDate(
                 time = 56,
+                year = 56,
                 seconds = 56,
-                var_date = 56,
                 month = 56,
+                var_date = 56,
                 hours = 56,
                 minutes = 56,
-                year = 56,
                 day = 56,
                 timezone_offset = 56
             )

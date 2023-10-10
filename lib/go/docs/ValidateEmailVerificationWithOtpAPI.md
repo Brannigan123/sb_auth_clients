@@ -1,16 +1,16 @@
-# \ValidateEmailVerificationAPI
+# \ValidateEmailVerificationWithOtpAPI
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ValidateEmailVerification**](ValidateEmailVerificationAPI.md#ValidateEmailVerification) | **Post** /api/v1/auth/public/validate-email-verification | 
+[**ValilidateEmailVerificationOtp**](ValidateEmailVerificationWithOtpAPI.md#ValilidateEmailVerificationOtp) | **Post** /api/v1/auth/public/validate-email-verification-otp | 
 
 
 
-## ValidateEmailVerification
+## ValilidateEmailVerificationOtp
 
-> AuthResponse ValidateEmailVerification(ctx).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
+> AuthResponse ValilidateEmailVerificationOtp(ctx).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ValidateEmailVerificationAPI.ValidateEmailVerification(context.Background()).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
+    resp, r, err := apiClient.ValidateEmailVerificationWithOtpAPI.ValilidateEmailVerificationOtp(context.Background()).EmailConfirmationOtpSubmitRequest(emailConfirmationOtpSubmitRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ValidateEmailVerificationAPI.ValidateEmailVerification``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ValidateEmailVerificationWithOtpAPI.ValilidateEmailVerificationOtp``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ValidateEmailVerification`: AuthResponse
-    fmt.Fprintf(os.Stdout, "Response from `ValidateEmailVerificationAPI.ValidateEmailVerification`: %v\n", resp)
+    // response from `ValilidateEmailVerificationOtp`: AuthResponse
+    fmt.Fprintf(os.Stdout, "Response from `ValidateEmailVerificationWithOtpAPI.ValilidateEmailVerificationOtp`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiValidateEmailVerificationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiValilidateEmailVerificationOtpRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

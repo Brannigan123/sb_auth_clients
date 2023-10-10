@@ -9,12 +9,12 @@ import 'package:authclient/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **time** | **int** |  | [optional] 
+**year** | **int** |  | [optional] 
 **seconds** | **int** |  | [optional] 
-**date** | **int** |  | [optional] 
 **month** | **int** |  | [optional] 
+**date** | **int** |  | [optional] 
 **hours** | **int** |  | [optional] 
 **minutes** | **int** |  | [optional] 
-**year** | **int** |  | [optional] 
 **day** | **int** |  | [optional] 
 **timezoneOffset** | **int** |  | [optional] 
 

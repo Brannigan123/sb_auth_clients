@@ -1,16 +1,16 @@
-# ValidateEmailVerificationApi
+# ResetUserPasswordApi
 
 All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**validateEmailVerification**](ValidateEmailVerificationApi.md#validateEmailVerification) | **POST** /api/v1/auth/public/validate-email-verification |  |
+| [**resetUserPassword**](ResetUserPasswordApi.md#resetUserPassword) | **POST** /api/v1/auth/public/reset-password |  |
 
 
 
-## validateEmailVerification
+## resetUserPassword
 
-> AuthResponse validateEmailVerification(emailConfirmationOtpSubmitRequest)
+> AuthResponse resetUserPassword(resetUserPasswordRequest)
 
 
 
@@ -22,20 +22,20 @@ import com.bran.auth.client.ApiClient;
 import com.bran.auth.client.ApiException;
 import com.bran.auth.client.Configuration;
 import com.bran.auth.client.models.*;
-import com.bran.auth.client.api.ValidateEmailVerificationApi;
+import com.bran.auth.client.api.ResetUserPasswordApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
 
-        ValidateEmailVerificationApi apiInstance = new ValidateEmailVerificationApi(defaultClient);
-        EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest = new EmailConfirmationOtpSubmitRequest(); // EmailConfirmationOtpSubmitRequest | 
+        ResetUserPasswordApi apiInstance = new ResetUserPasswordApi(defaultClient);
+        ResetUserPasswordRequest resetUserPasswordRequest = new ResetUserPasswordRequest(); // ResetUserPasswordRequest | 
         try {
-            AuthResponse result = apiInstance.validateEmailVerification(emailConfirmationOtpSubmitRequest);
+            AuthResponse result = apiInstance.resetUserPassword(resetUserPasswordRequest);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ValidateEmailVerificationApi#validateEmailVerification");
+            System.err.println("Exception when calling ResetUserPasswordApi#resetUserPassword");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -50,7 +50,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **emailConfirmationOtpSubmitRequest** | [**EmailConfirmationOtpSubmitRequest**](EmailConfirmationOtpSubmitRequest.md)|  | |
+| **resetUserPasswordRequest** | [**ResetUserPasswordRequest**](ResetUserPasswordRequest.md)|  | |
 
 ### Return type
 

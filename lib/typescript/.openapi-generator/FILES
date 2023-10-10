@@ -7,11 +7,12 @@ base.ts
 com/bran/auth/client/api/authenticate-api.ts
 com/bran/auth/client/api/refresh-token-api.ts
 com/bran/auth/client/api/register-api.ts
+com/bran/auth/client/api/reset-user-password-api.ts
 com/bran/auth/client/api/send-custom-email-verification-api.ts
 com/bran/auth/client/api/send-email-verification-mail-api.ts
 com/bran/auth/client/api/signout-api.ts
 com/bran/auth/client/api/update-user-details-api.ts
-com/bran/auth/client/api/validate-email-verification-api.ts
+com/bran/auth/client/api/validate-email-verification-with-otp-api.ts
 com/bran/auth/client/model/auth-response.ts
 com/bran/auth/client/model/email-confirmation-otp-submit-request.ts
 com/bran/auth/client/model/index.ts
@@ -19,6 +20,7 @@ com/bran/auth/client/model/model-date.ts
 com/bran/auth/client/model/otp-request-response.ts
 com/bran/auth/client/model/otp-request.ts
 com/bran/auth/client/model/permission.ts
+com/bran/auth/client/model/reset-user-password-request.ts
 com/bran/auth/client/model/response-user-details.ts
 com/bran/auth/client/model/role.ts
 com/bran/auth/client/model/signin-request.ts

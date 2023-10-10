@@ -14,20 +14,20 @@
 
 import unittest
 
-from authclient.api.validate_email_verification_api import ValidateEmailVerificationApi  # noqa: E501
+from authclient.api.reset_user_password_api import ResetUserPasswordApi  # noqa: E501
 
 
-class TestValidateEmailVerificationApi(unittest.TestCase):
-    """ValidateEmailVerificationApi unit test stubs"""
+class TestResetUserPasswordApi(unittest.TestCase):
+    """ResetUserPasswordApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ValidateEmailVerificationApi()  # noqa: E501
+        self.api = ResetUserPasswordApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass
 
-    def test_validate_email_verification(self) -> None:
-        """Test case for validate_email_verification
+    def test_reset_user_password(self) -> None:
+        """Test case for reset_user_password
 
         """
         pass

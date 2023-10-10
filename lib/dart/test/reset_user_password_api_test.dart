@@ -12,13 +12,13 @@ import 'package:authclient/api.dart';
 import 'package:test/test.dart';
 
 
-/// tests for ValidateEmailVerificationApi
+/// tests for ResetUserPasswordApi
 void main() {
-  // final instance = ValidateEmailVerificationApi();
+  // final instance = ResetUserPasswordApi();
 
-  group('tests for ValidateEmailVerificationApi', () {
-    //Future<AuthResponse> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) async
-    test('test validateEmailVerification', () async {
+  group('tests for ResetUserPasswordApi', () {
+    //Future<AuthResponse> resetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest) async
+    test('test resetUserPassword', () async {
       // TODO
     });
 

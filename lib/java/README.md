@@ -116,11 +116,12 @@ Class | Method | HTTP request | Description
 *AuthenticateApi* | [**authenticate**](docs/AuthenticateApi.md#authenticate) | **POST** /api/v1/auth/public/authenticate | 
 *RefreshTokenApi* | [**refeshToken**](docs/RefreshTokenApi.md#refeshToken) | **POST** /api/v1/auth/public/refresh-token | 
 *RegisterApi* | [**register**](docs/RegisterApi.md#register) | **POST** /api/v1/auth/public/register | 
+*ResetUserPasswordApi* | [**resetUserPassword**](docs/ResetUserPasswordApi.md#resetUserPassword) | **POST** /api/v1/auth/public/reset-password | 
 *SendCustomEmailVerificationApi* | [**requestOtp**](docs/SendCustomEmailVerificationApi.md#requestOtp) | **POST** /api/v1/auth/public/request-otp | 
 *SendEmailVerificationMailApi* | [**sendVerificationEmail**](docs/SendEmailVerificationMailApi.md#sendVerificationEmail) | **POST** /api/v1/auth/authenticated/send-email-verification-mail | 
 *SignoutApi* | [**signout**](docs/SignoutApi.md#signout) | **POST** /api/v1/auth/authenticated/logout | 
 *UpdateUserDetailsApi* | [**updateUserDetails**](docs/UpdateUserDetailsApi.md#updateUserDetails) | **POST** /api/v1/auth/authenticated/update-user-details | 
-*ValidateEmailVerificationApi* | [**validateEmailVerification**](docs/ValidateEmailVerificationApi.md#validateEmailVerification) | **POST** /api/v1/auth/public/validate-email-verification | 
+*ValidateEmailVerificationWithOtpApi* | [**valilidateEmailVerificationOtp**](docs/ValidateEmailVerificationWithOtpApi.md#valilidateEmailVerificationOtp) | **POST** /api/v1/auth/public/validate-email-verification-otp | 
 
 
 ## Documentation for Models
@@ -131,6 +132,7 @@ Class | Method | HTTP request | Description
  - [OtpRequest](docs/OtpRequest.md)
  - [OtpRequestResponse](docs/OtpRequestResponse.md)
  - [Permission](docs/Permission.md)
+ - [ResetUserPasswordRequest](docs/ResetUserPasswordRequest.md)
  - [ResponseUserDetails](docs/ResponseUserDetails.md)
  - [Role](docs/Role.md)
  - [SigninRequest](docs/SigninRequest.md)

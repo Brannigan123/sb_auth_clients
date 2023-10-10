@@ -6,11 +6,12 @@ api/openapi.yaml
 api_authenticate.go
 api_refresh_token.go
 api_register.go
+api_reset_user_password.go
 api_send_custom_email_verification.go
 api_send_email_verification_mail.go
 api_signout.go
 api_update_user_details.go
-api_validate_email_verification.go
+api_validate_email_verification_with_otp.go
 client.go
 configuration.go
 docs/AuthResponse.md
@@ -22,6 +23,8 @@ docs/OtpRequestResponse.md
 docs/Permission.md
 docs/RefreshTokenAPI.md
 docs/RegisterAPI.md
+docs/ResetUserPasswordAPI.md
+docs/ResetUserPasswordRequest.md
 docs/ResponseUserDetails.md
 docs/Role.md
 docs/SendCustomEmailVerificationAPI.md
@@ -33,7 +36,7 @@ docs/SignupRequest.md
 docs/TokenRefreshRequest.md
 docs/UpdateUserDetailsAPI.md
 docs/UserDetailsUpdateRequest.md
-docs/ValidateEmailVerificationAPI.md
+docs/ValidateEmailVerificationWithOtpAPI.md
 git_push.sh
 go.mod
 go.sum
@@ -43,6 +46,7 @@ model_email_confirmation_otp_submit_request.go
 model_otp_request.go
 model_otp_request_response.go
 model_permission.go
+model_reset_user_password_request.go
 model_response_user_details.go
 model_role.go
 model_signin_request.go
@@ -54,9 +58,10 @@ response.go
 test/api_authenticate_test.go
 test/api_refresh_token_test.go
 test/api_register_test.go
+test/api_reset_user_password_test.go
 test/api_send_custom_email_verification_test.go
 test/api_send_email_verification_mail_test.go
 test/api_signout_test.go
 test/api_update_user_details_test.go
-test/api_validate_email_verification_test.go
+test/api_validate_email_verification_with_otp_test.go
 utils.go

@@ -26,12 +26,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for ValidateEmailVerificationApi
+ * API tests for ValidateEmailVerificationWithOtpApi
  */
 @Ignore
-public class ValidateEmailVerificationApiTest {
+public class ValidateEmailVerificationWithOtpApiTest {
 
-    private final ValidateEmailVerificationApi api = new ValidateEmailVerificationApi();
+    private final ValidateEmailVerificationWithOtpApi api = new ValidateEmailVerificationWithOtpApi();
 
     
     /**
@@ -43,9 +43,9 @@ public class ValidateEmailVerificationApiTest {
      *          if the Api call fails
      */
     @Test
-    public void validateEmailVerificationTest() {
+    public void valilidateEmailVerificationOtpTest() {
         EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest = null;
-        AuthResponse response = api.validateEmailVerification(emailConfirmationOtpSubmitRequest);
+        AuthResponse response = api.valilidateEmailVerificationOtp(emailConfirmationOtpSubmitRequest);
 
         // TODO: test validations
     }

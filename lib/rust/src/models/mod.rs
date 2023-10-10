@@ -10,6 +10,8 @@ pub mod otp_request_response;
 pub use self::otp_request_response::OtpRequestResponse;
 pub mod permission;
 pub use self::permission::Permission;
+pub mod reset_user_password_request;
+pub use self::reset_user_password_request::ResetUserPasswordRequest;
 pub mod response_user_details;
 pub use self::response_user_details::ResponseUserDetails;
 pub mod role;

@@ -32,6 +32,13 @@ export interface ModelDate {
      * @memberof ModelDate
      * @deprecated
      */
+    'year'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelDate
+     * @deprecated
+     */
     'seconds'?: number;
     /**
      * 
@@ -39,14 +46,14 @@ export interface ModelDate {
      * @memberof ModelDate
      * @deprecated
      */
-    'date'?: number;
+    'month'?: number;
     /**
      * 
      * @type {number}
      * @memberof ModelDate
      * @deprecated
      */
-    'month'?: number;
+    'date'?: number;
     /**
      * 
      * @type {number}
@@ -61,13 +68,6 @@ export interface ModelDate {
      * @deprecated
      */
     'minutes'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ModelDate
-     * @deprecated
-     */
-    'year'?: number;
     /**
      * 
      * @type {number}

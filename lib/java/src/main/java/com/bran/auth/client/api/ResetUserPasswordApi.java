@@ -3,7 +3,7 @@ package com.bran.auth.client.api;
 import com.bran.auth.client.ApiClient;
 
 import com.bran.auth.client.model.AuthResponse;
-import com.bran.auth.client.model.EmailConfirmationOtpSubmitRequest;
+import com.bran.auth.client.model.ResetUserPasswordRequest;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,14 +27,14 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class ValidateEmailVerificationApi {
+public class ResetUserPasswordApi {
     private ApiClient apiClient;
 
-    public ValidateEmailVerificationApi() {
+    public ResetUserPasswordApi() {
         this(new ApiClient());
     }
 
-    public ValidateEmailVerificationApi(ApiClient apiClient) {
+    public ResetUserPasswordApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -50,28 +50,28 @@ public class ValidateEmailVerificationApi {
      * 
      * 
      * <p><b>200</b> - Default response
-     * @param emailConfirmationOtpSubmitRequest  (required)
+     * @param resetUserPasswordRequest  (required)
      * @return AuthResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public AuthResponse validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
-        return validateEmailVerificationWithHttpInfo(emailConfirmationOtpSubmitRequest).getBody();
+    public AuthResponse resetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest) throws RestClientException {
+        return resetUserPasswordWithHttpInfo(resetUserPasswordRequest).getBody();
     }
 
     /**
      * 
      * 
      * <p><b>200</b> - Default response
-     * @param emailConfirmationOtpSubmitRequest  (required)
+     * @param resetUserPasswordRequest  (required)
      * @return ResponseEntity&lt;AuthResponse&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<AuthResponse> validateEmailVerificationWithHttpInfo(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest) throws RestClientException {
-        Object localVarPostBody = emailConfirmationOtpSubmitRequest;
+    public ResponseEntity<AuthResponse> resetUserPasswordWithHttpInfo(ResetUserPasswordRequest resetUserPasswordRequest) throws RestClientException {
+        Object localVarPostBody = resetUserPasswordRequest;
         
-        // verify the required parameter 'emailConfirmationOtpSubmitRequest' is set
-        if (emailConfirmationOtpSubmitRequest == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'emailConfirmationOtpSubmitRequest' when calling validateEmailVerification");
+        // verify the required parameter 'resetUserPasswordRequest' is set
+        if (resetUserPasswordRequest == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'resetUserPasswordRequest' when calling resetUserPassword");
         }
         
 
@@ -90,6 +90,6 @@ public class ValidateEmailVerificationApi {
         String[] localVarAuthNames = new String[] {  };
 
         ParameterizedTypeReference<AuthResponse> localReturnType = new ParameterizedTypeReference<AuthResponse>() {};
-        return apiClient.invokeAPI("/api/v1/auth/public/validate-email-verification", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+        return apiClient.invokeAPI("/api/v1/auth/public/reset-password", HttpMethod.POST, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

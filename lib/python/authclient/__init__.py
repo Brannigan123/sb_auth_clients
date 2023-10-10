@@ -20,11 +20,12 @@ __version__ = "1.0.0"
 from authclient.api.authenticate_api import AuthenticateApi
 from authclient.api.refresh_token_api import RefreshTokenApi
 from authclient.api.register_api import RegisterApi
+from authclient.api.reset_user_password_api import ResetUserPasswordApi
 from authclient.api.send_custom_email_verification_api import SendCustomEmailVerificationApi
 from authclient.api.send_email_verification_mail_api import SendEmailVerificationMailApi
 from authclient.api.signout_api import SignoutApi
 from authclient.api.update_user_details_api import UpdateUserDetailsApi
-from authclient.api.validate_email_verification_api import ValidateEmailVerificationApi
+from authclient.api.validate_email_verification_with_otp_api import ValidateEmailVerificationWithOtpApi
 
 # import ApiClient
 from authclient.api_response import ApiResponse
@@ -44,6 +45,7 @@ from authclient.models.model_date import ModelDate
 from authclient.models.otp_request import OtpRequest
 from authclient.models.otp_request_response import OtpRequestResponse
 from authclient.models.permission import Permission
+from authclient.models.reset_user_password_request import ResetUserPasswordRequest
 from authclient.models.response_user_details import ResponseUserDetails
 from authclient.models.role import Role
 from authclient.models.signin_request import SigninRequest

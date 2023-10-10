@@ -1,16 +1,16 @@
-# \ValidateEmailVerificationApi
+# \ResetUserPasswordApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate_email_verification**](ValidateEmailVerificationApi.md#validate_email_verification) | **POST** /api/v1/auth/public/validate-email-verification | 
+[**reset_user_password**](ResetUserPasswordApi.md#reset_user_password) | **POST** /api/v1/auth/public/reset-password | 
 
 
 
-## validate_email_verification
+## reset_user_password
 
-> crate::models::AuthResponse validate_email_verification(email_confirmation_otp_submit_request)
+> crate::models::AuthResponse reset_user_password(reset_user_password_request)
 
 
 ### Parameters
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**email_confirmation_otp_submit_request** | [**EmailConfirmationOtpSubmitRequest**](EmailConfirmationOtpSubmitRequest.md) |  | [required] |
+**reset_user_password_request** | [**ResetUserPasswordRequest**](ResetUserPasswordRequest.md) |  | [required] |
 
 ### Return type
 

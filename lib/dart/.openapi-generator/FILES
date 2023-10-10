@@ -12,6 +12,8 @@ doc/OtpRequestResponse.md
 doc/Permission.md
 doc/RefreshTokenApi.md
 doc/RegisterApi.md
+doc/ResetUserPasswordApi.md
+doc/ResetUserPasswordRequest.md
 doc/ResponseUserDetails.md
 doc/Role.md
 doc/SendCustomEmailVerificationApi.md
@@ -23,17 +25,18 @@ doc/SignupRequest.md
 doc/TokenRefreshRequest.md
 doc/UpdateUserDetailsApi.md
 doc/UserDetailsUpdateRequest.md
-doc/ValidateEmailVerificationApi.md
+doc/ValidateEmailVerificationWithOtpApi.md
 git_push.sh
 lib/api.dart
 lib/api/authenticate_api.dart
 lib/api/refresh_token_api.dart
 lib/api/register_api.dart
+lib/api/reset_user_password_api.dart
 lib/api/send_custom_email_verification_api.dart
 lib/api/send_email_verification_mail_api.dart
 lib/api/signout_api.dart
 lib/api/update_user_details_api.dart
-lib/api/validate_email_verification_api.dart
+lib/api/validate_email_verification_with_otp_api.dart
 lib/api_client.dart
 lib/api_exception.dart
 lib/api_helper.dart
@@ -48,6 +51,7 @@ lib/model/model_date.dart
 lib/model/otp_request.dart
 lib/model/otp_request_response.dart
 lib/model/permission.dart
+lib/model/reset_user_password_request.dart
 lib/model/response_user_details.dart
 lib/model/role.dart
 lib/model/signin_request.dart
@@ -65,6 +69,8 @@ test/otp_request_test.dart
 test/permission_test.dart
 test/refresh_token_api_test.dart
 test/register_api_test.dart
+test/reset_user_password_api_test.dart
+test/reset_user_password_request_test.dart
 test/response_user_details_test.dart
 test/role_test.dart
 test/send_custom_email_verification_api_test.dart
@@ -76,4 +82,4 @@ test/signup_request_test.dart
 test/token_refresh_request_test.dart
 test/update_user_details_api_test.dart
 test/user_details_update_request_test.dart
-test/validate_email_verification_api_test.dart
+test/validate_email_verification_with_otp_api_test.dart

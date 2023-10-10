@@ -18,10 +18,12 @@ tags:
   name: Refresh-token
 - description: Register a new user
   name: Register
-- description: Send an email verification mail with OTP and custom message
+- description: Send an email with OTP and custom message
   name: Send custom email verification
+- description: "Update user details, requires OTP verification"
+  name: Reset user password
 - description: Validate an email verification OTP
-  name: Validate email verification
+  name: Validate email verification with otp
 paths:
   /api/v1/auth/authenticated/logout:
     post:
@@ -162,9 +164,29 @@ paths:
       - Send custom email verification
       x-content-type: '*/*'
       x-accepts: '*/*'
-  /api/v1/auth/public/validate-email-verification:
+  /api/v1/auth/public/reset-password:
     post:
-      operationId: validateEmailVerification
+      operationId: resetUserPassword
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ResetUserPasswordRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+          description: Default response
+      tags:
+      - Reset user password
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/auth/public/validate-email-verification-otp:
+    post:
+      operationId: valilidateEmailVerificationOtp
       requestBody:
         content:
           '*/*':
@@ -179,7 +201,7 @@ paths:
                 $ref: '#/components/schemas/AuthResponse'
           description: Default response
       tags:
-      - Validate email verification
+      - Validate email verification with otp
       x-content-type: '*/*'
       x-accepts: '*/*'
 components:
@@ -407,28 +429,32 @@ components:
       type: integer
     Date:
       example:
-        date: 1
-        seconds: 6
-        hours: 5
+        date: 5
+        seconds: 1
+        hours: 2
         month: 5
-        year: 7
+        year: 6
         timezoneOffset: 3
-        minutes: 2
+        minutes: 7
         time: 0
         day: 9
       properties:
         time:
           format: int64
           type: integer
+        year:
+          deprecated: true
+          format: int32
+          type: integer
         seconds:
           deprecated: true
           format: int32
           type: integer
-        date:
+        month:
           deprecated: true
           format: int32
           type: integer
-        month:
+        date:
           deprecated: true
           format: int32
           type: integer
@@ -437,10 +463,6 @@ components:
           format: int32
           type: integer
         minutes:
-          deprecated: true
-          format: int32
-          type: integer
-        year:
           deprecated: true
           format: int32
           type: integer
@@ -456,13 +478,13 @@ components:
     OtpRequestResponse:
       example:
         expiryDate:
-          date: 1
-          seconds: 6
-          hours: 5
+          date: 5
+          seconds: 1
+          hours: 2
           month: 5
-          year: 7
+          year: 6
           timezoneOffset: 3
-          minutes: 2
+          minutes: 7
           time: 0
           day: 9
         otpId: otpId
@@ -538,6 +560,22 @@ components:
         emailOrUsername:
           type: string
         message:
+          type: string
+      type: object
+    ResetUserPasswordRequest:
+      example:
+        emailOrUsername: emailOrUsername
+        password: password
+        otpId: otpId
+        otpCode: otpCode
+      properties:
+        otpId:
+          type: string
+        otpCode:
+          type: string
+        emailOrUsername:
+          type: string
+        password:
           type: string
       type: object
     EmailConfirmationOtpSubmitRequest:

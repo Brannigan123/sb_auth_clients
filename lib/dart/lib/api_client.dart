@@ -194,6 +194,8 @@ class ApiClient {
           return OtpRequestResponse.fromJson(value);
         case 'Permission':
           return Permission.fromJson(value);
+        case 'ResetUserPasswordRequest':
+          return ResetUserPasswordRequest.fromJson(value);
         case 'ResponseUserDetails':
           return ResponseUserDetails.fromJson(value);
         case 'Role':

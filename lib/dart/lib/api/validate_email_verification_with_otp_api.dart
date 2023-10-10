@@ -11,18 +11,18 @@
 part of com.bran.auth.client;
 
 
-class ValidateEmailVerificationApi {
-  ValidateEmailVerificationApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+class ValidateEmailVerificationWithOtpApi {
+  ValidateEmailVerificationWithOtpApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
-  /// Performs an HTTP 'POST /api/v1/auth/public/validate-email-verification' operation and returns the [Response].
+  /// Performs an HTTP 'POST /api/v1/auth/public/validate-email-verification-otp' operation and returns the [Response].
   /// Parameters:
   ///
   /// * [EmailConfirmationOtpSubmitRequest] emailConfirmationOtpSubmitRequest (required):
-  Future<Response> validateEmailVerificationWithHttpInfo(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
+  Future<Response> valilidateEmailVerificationOtpWithHttpInfo(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/v1/auth/public/validate-email-verification';
+    final path = r'/api/v1/auth/public/validate-email-verification-otp';
 
     // ignore: prefer_final_locals
     Object? postBody = emailConfirmationOtpSubmitRequest;
@@ -48,8 +48,8 @@ class ValidateEmailVerificationApi {
   /// Parameters:
   ///
   /// * [EmailConfirmationOtpSubmitRequest] emailConfirmationOtpSubmitRequest (required):
-  Future<AuthResponse?> validateEmailVerification(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
-    final response = await validateEmailVerificationWithHttpInfo(emailConfirmationOtpSubmitRequest,);
+  Future<AuthResponse?> valilidateEmailVerificationOtp(EmailConfirmationOtpSubmitRequest emailConfirmationOtpSubmitRequest,) async {
+    final response = await valilidateEmailVerificationOtpWithHttpInfo(emailConfirmationOtpSubmitRequest,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

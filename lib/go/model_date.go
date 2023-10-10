@@ -21,17 +21,17 @@ var _ MappedNullable = &Date{}
 type Date struct {
 	Time *int64 `json:"time,omitempty"`
 	// Deprecated
+	Year *int32 `json:"year,omitempty"`
+	// Deprecated
 	Seconds *int32 `json:"seconds,omitempty"`
 	// Deprecated
-	Date *int32 `json:"date,omitempty"`
-	// Deprecated
 	Month *int32 `json:"month,omitempty"`
+	// Deprecated
+	Date *int32 `json:"date,omitempty"`
 	// Deprecated
 	Hours *int32 `json:"hours,omitempty"`
 	// Deprecated
 	Minutes *int32 `json:"minutes,omitempty"`
-	// Deprecated
-	Year *int32 `json:"year,omitempty"`
 	// Deprecated
 	Day *int32 `json:"day,omitempty"`
 	// Deprecated
@@ -87,6 +87,41 @@ func (o *Date) SetTime(v int64) {
 	o.Time = &v
 }
 
+// GetYear returns the Year field value if set, zero value otherwise.
+// Deprecated
+func (o *Date) GetYear() int32 {
+	if o == nil || IsNil(o.Year) {
+		var ret int32
+		return ret
+	}
+	return *o.Year
+}
+
+// GetYearOk returns a tuple with the Year field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// Deprecated
+func (o *Date) GetYearOk() (*int32, bool) {
+	if o == nil || IsNil(o.Year) {
+		return nil, false
+	}
+	return o.Year, true
+}
+
+// HasYear returns a boolean if a field has been set.
+func (o *Date) HasYear() bool {
+	if o != nil && !IsNil(o.Year) {
+		return true
+	}
+
+	return false
+}
+
+// SetYear gets a reference to the given int32 and assigns it to the Year field.
+// Deprecated
+func (o *Date) SetYear(v int32) {
+	o.Year = &v
+}
+
 // GetSeconds returns the Seconds field value if set, zero value otherwise.
 // Deprecated
 func (o *Date) GetSeconds() int32 {
@@ -122,41 +157,6 @@ func (o *Date) SetSeconds(v int32) {
 	o.Seconds = &v
 }
 
-// GetDate returns the Date field value if set, zero value otherwise.
-// Deprecated
-func (o *Date) GetDate() int32 {
-	if o == nil || IsNil(o.Date) {
-		var ret int32
-		return ret
-	}
-	return *o.Date
-}
-
-// GetDateOk returns a tuple with the Date field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *Date) GetDateOk() (*int32, bool) {
-	if o == nil || IsNil(o.Date) {
-		return nil, false
-	}
-	return o.Date, true
-}
-
-// HasDate returns a boolean if a field has been set.
-func (o *Date) HasDate() bool {
-	if o != nil && !IsNil(o.Date) {
-		return true
-	}
-
-	return false
-}
-
-// SetDate gets a reference to the given int32 and assigns it to the Date field.
-// Deprecated
-func (o *Date) SetDate(v int32) {
-	o.Date = &v
-}
-
 // GetMonth returns the Month field value if set, zero value otherwise.
 // Deprecated
 func (o *Date) GetMonth() int32 {
@@ -190,6 +190,41 @@ func (o *Date) HasMonth() bool {
 // Deprecated
 func (o *Date) SetMonth(v int32) {
 	o.Month = &v
+}
+
+// GetDate returns the Date field value if set, zero value otherwise.
+// Deprecated
+func (o *Date) GetDate() int32 {
+	if o == nil || IsNil(o.Date) {
+		var ret int32
+		return ret
+	}
+	return *o.Date
+}
+
+// GetDateOk returns a tuple with the Date field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// Deprecated
+func (o *Date) GetDateOk() (*int32, bool) {
+	if o == nil || IsNil(o.Date) {
+		return nil, false
+	}
+	return o.Date, true
+}
+
+// HasDate returns a boolean if a field has been set.
+func (o *Date) HasDate() bool {
+	if o != nil && !IsNil(o.Date) {
+		return true
+	}
+
+	return false
+}
+
+// SetDate gets a reference to the given int32 and assigns it to the Date field.
+// Deprecated
+func (o *Date) SetDate(v int32) {
+	o.Date = &v
 }
 
 // GetHours returns the Hours field value if set, zero value otherwise.
@@ -260,41 +295,6 @@ func (o *Date) HasMinutes() bool {
 // Deprecated
 func (o *Date) SetMinutes(v int32) {
 	o.Minutes = &v
-}
-
-// GetYear returns the Year field value if set, zero value otherwise.
-// Deprecated
-func (o *Date) GetYear() int32 {
-	if o == nil || IsNil(o.Year) {
-		var ret int32
-		return ret
-	}
-	return *o.Year
-}
-
-// GetYearOk returns a tuple with the Year field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *Date) GetYearOk() (*int32, bool) {
-	if o == nil || IsNil(o.Year) {
-		return nil, false
-	}
-	return o.Year, true
-}
-
-// HasYear returns a boolean if a field has been set.
-func (o *Date) HasYear() bool {
-	if o != nil && !IsNil(o.Year) {
-		return true
-	}
-
-	return false
-}
-
-// SetYear gets a reference to the given int32 and assigns it to the Year field.
-// Deprecated
-func (o *Date) SetYear(v int32) {
-	o.Year = &v
 }
 
 // GetDay returns the Day field value if set, zero value otherwise.
@@ -380,23 +380,23 @@ func (o Date) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
+	if !IsNil(o.Year) {
+		toSerialize["year"] = o.Year
+	}
 	if !IsNil(o.Seconds) {
 		toSerialize["seconds"] = o.Seconds
 	}
-	if !IsNil(o.Date) {
-		toSerialize["date"] = o.Date
-	}
 	if !IsNil(o.Month) {
 		toSerialize["month"] = o.Month
+	}
+	if !IsNil(o.Date) {
+		toSerialize["date"] = o.Date
 	}
 	if !IsNil(o.Hours) {
 		toSerialize["hours"] = o.Hours
 	}
 	if !IsNil(o.Minutes) {
 		toSerialize["minutes"] = o.Minutes
-	}
-	if !IsNil(o.Year) {
-		toSerialize["year"] = o.Year
 	}
 	if !IsNil(o.Day) {
 		toSerialize["day"] = o.Day

@@ -4,6 +4,7 @@ export * from './model-date';
 export * from './otp-request';
 export * from './otp-request-response';
 export * from './permission';
+export * from './reset-user-password-request';
 export * from './response-user-details';
 export * from './role';
 export * from './signin-request';

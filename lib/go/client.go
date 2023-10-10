@@ -55,6 +55,8 @@ type APIClient struct {
 
 	RegisterAPI *RegisterAPIService
 
+	ResetUserPasswordAPI *ResetUserPasswordAPIService
+
 	SendCustomEmailVerificationAPI *SendCustomEmailVerificationAPIService
 
 	SendEmailVerificationMailAPI *SendEmailVerificationMailAPIService
@@ -63,7 +65,7 @@ type APIClient struct {
 
 	UpdateUserDetailsAPI *UpdateUserDetailsAPIService
 
-	ValidateEmailVerificationAPI *ValidateEmailVerificationAPIService
+	ValidateEmailVerificationWithOtpAPI *ValidateEmailVerificationWithOtpAPIService
 }
 
 type service struct {
@@ -85,11 +87,12 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthenticateAPI = (*AuthenticateAPIService)(&c.common)
 	c.RefreshTokenAPI = (*RefreshTokenAPIService)(&c.common)
 	c.RegisterAPI = (*RegisterAPIService)(&c.common)
+	c.ResetUserPasswordAPI = (*ResetUserPasswordAPIService)(&c.common)
 	c.SendCustomEmailVerificationAPI = (*SendCustomEmailVerificationAPIService)(&c.common)
 	c.SendEmailVerificationMailAPI = (*SendEmailVerificationMailAPIService)(&c.common)
 	c.SignoutAPI = (*SignoutAPIService)(&c.common)
 	c.UpdateUserDetailsAPI = (*UpdateUserDetailsAPIService)(&c.common)
-	c.ValidateEmailVerificationAPI = (*ValidateEmailVerificationAPIService)(&c.common)
+	c.ValidateEmailVerificationWithOtpAPI = (*ValidateEmailVerificationWithOtpAPIService)(&c.common)
 
 	return c
 }

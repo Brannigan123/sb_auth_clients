@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **time** | **int** |  | [optional] 
+**year** | **int** |  | [optional] 
 **seconds** | **int** |  | [optional] 
-**var_date** | **int** |  | [optional] 
 **month** | **int** |  | [optional] 
+**var_date** | **int** |  | [optional] 
 **hours** | **int** |  | [optional] 
 **minutes** | **int** |  | [optional] 
-**year** | **int** |  | [optional] 
 **day** | **int** |  | [optional] 
 **timezone_offset** | **int** |  | [optional] 
 

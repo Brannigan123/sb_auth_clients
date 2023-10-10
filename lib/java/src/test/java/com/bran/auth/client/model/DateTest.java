@@ -46,6 +46,14 @@ public class DateTest {
     }
 
     /**
+     * Test the property 'year'
+     */
+    @Test
+    public void yearTest() {
+        // TODO: test year
+    }
+
+    /**
      * Test the property 'seconds'
      */
     @Test
@@ -54,19 +62,19 @@ public class DateTest {
     }
 
     /**
-     * Test the property 'date'
-     */
-    @Test
-    public void dateTest() {
-        // TODO: test date
-    }
-
-    /**
      * Test the property 'month'
      */
     @Test
     public void monthTest() {
         // TODO: test month
+    }
+
+    /**
+     * Test the property 'date'
+     */
+    @Test
+    public void dateTest() {
+        // TODO: test date
     }
 
     /**
@@ -83,14 +91,6 @@ public class DateTest {
     @Test
     public void minutesTest() {
         // TODO: test minutes
-    }
-
-    /**
-     * Test the property 'year'
-     */
-    @Test
-    public void yearTest() {
-        // TODO: test year
     }
 
     /**

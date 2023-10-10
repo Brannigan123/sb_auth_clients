@@ -21,18 +21,23 @@ void main() {
       // TODO
     });
 
+    // int year
+    test('to test the property `year`', () async {
+      // TODO
+    });
+
     // int seconds
     test('to test the property `seconds`', () async {
       // TODO
     });
 
-    // int date
-    test('to test the property `date`', () async {
+    // int month
+    test('to test the property `month`', () async {
       // TODO
     });
 
-    // int month
-    test('to test the property `month`', () async {
+    // int date
+    test('to test the property `date`', () async {
       // TODO
     });
 
@@ -43,11 +48,6 @@ void main() {
 
     // int minutes
     test('to test the property `minutes`', () async {
-      // TODO
-    });
-
-    // int year
-    test('to test the property `year`', () async {
       // TODO
     });
 

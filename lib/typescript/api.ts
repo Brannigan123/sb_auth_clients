@@ -17,9 +17,10 @@
 export * from './com/bran/auth/client/api/authenticate-api';
 export * from './com/bran/auth/client/api/refresh-token-api';
 export * from './com/bran/auth/client/api/register-api';
+export * from './com/bran/auth/client/api/reset-user-password-api';
 export * from './com/bran/auth/client/api/send-custom-email-verification-api';
 export * from './com/bran/auth/client/api/send-email-verification-mail-api';
 export * from './com/bran/auth/client/api/signout-api';
 export * from './com/bran/auth/client/api/update-user-details-api';
-export * from './com/bran/auth/client/api/validate-email-verification-api';
+export * from './com/bran/auth/client/api/validate-email-verification-with-otp-api';
 

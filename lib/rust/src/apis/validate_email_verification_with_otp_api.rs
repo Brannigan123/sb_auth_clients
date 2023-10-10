@@ -15,28 +15,28 @@ use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 
-/// struct for typed successes of method [`validate_email_verification`]
+/// struct for typed successes of method [`valilidate_email_verification_otp`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ValidateEmailVerificationSuccess {
+pub enum ValilidateEmailVerificationOtpSuccess {
     Status200(crate::models::AuthResponse),
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`validate_email_verification`]
+/// struct for typed errors of method [`valilidate_email_verification_otp`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum ValidateEmailVerificationError {
+pub enum ValilidateEmailVerificationOtpError {
     UnknownValue(serde_json::Value),
 }
 
 
-pub async fn validate_email_verification(configuration: &configuration::Configuration, email_confirmation_otp_submit_request: crate::models::EmailConfirmationOtpSubmitRequest) -> Result<ResponseContent<ValidateEmailVerificationSuccess>, Error<ValidateEmailVerificationError>> {
+pub async fn valilidate_email_verification_otp(configuration: &configuration::Configuration, email_confirmation_otp_submit_request: crate::models::EmailConfirmationOtpSubmitRequest) -> Result<ResponseContent<ValilidateEmailVerificationOtpSuccess>, Error<ValilidateEmailVerificationOtpError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/v1/auth/public/validate-email-verification", local_var_configuration.base_path);
+    let local_var_uri_str = format!("{}/api/v1/auth/public/validate-email-verification-otp", local_var_configuration.base_path);
     let mut local_var_req_builder = local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
@@ -51,11 +51,11 @@ pub async fn validate_email_verification(configuration: &configuration::Configur
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        let local_var_entity: Option<ValidateEmailVerificationSuccess> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ValilidateEmailVerificationOtpSuccess> = serde_json::from_str(&local_var_content).ok();
         let local_var_result = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Ok(local_var_result)
     } else {
-        let local_var_entity: Option<ValidateEmailVerificationError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<ValilidateEmailVerificationOtpError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };
         Err(Error::ResponseError(local_var_error))
     }

@@ -1,14 +1,14 @@
-# authclient.ValidateEmailVerificationApi
+# authclient.ValidateEmailVerificationWithOtpApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**validate_email_verification**](ValidateEmailVerificationApi.md#validate_email_verification) | **POST** /api/v1/auth/public/validate-email-verification | 
+[**valilidate_email_verification_otp**](ValidateEmailVerificationWithOtpApi.md#valilidate_email_verification_otp) | **POST** /api/v1/auth/public/validate-email-verification-otp | 
 
 
-# **validate_email_verification**
-> AuthResponse validate_email_verification(email_confirmation_otp_submit_request)
+# **valilidate_email_verification_otp**
+> AuthResponse valilidate_email_verification_otp(email_confirmation_otp_submit_request)
 
 
 
@@ -33,15 +33,15 @@ configuration = authclient.Configuration(
 # Enter a context with an instance of the API client
 async with authclient.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = authclient.ValidateEmailVerificationApi(api_client)
+    api_instance = authclient.ValidateEmailVerificationWithOtpApi(api_client)
     email_confirmation_otp_submit_request = authclient.EmailConfirmationOtpSubmitRequest() # EmailConfirmationOtpSubmitRequest | 
 
     try:
-        api_response = await api_instance.validate_email_verification(email_confirmation_otp_submit_request)
-        print("The response of ValidateEmailVerificationApi->validate_email_verification:\n")
+        api_response = await api_instance.valilidate_email_verification_otp(email_confirmation_otp_submit_request)
+        print("The response of ValidateEmailVerificationWithOtpApi->valilidate_email_verification_otp:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ValidateEmailVerificationApi->validate_email_verification: %s\n" % e)
+        print("Exception when calling ValidateEmailVerificationWithOtpApi->valilidate_email_verification_otp: %s\n" % e)
 ```
 
 
